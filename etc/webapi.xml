@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    RoyalCyber
+ * @package     RoyalCyber_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <!-- Product Question -->
+    <route url="/V1/product-questions/question/:questionId" method="GET">
+        <service class="RoyalCyber\ProductQuestions\Api\QuestionRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="RoyalCyber_ProductQuestions::question"/>
+        </resources>
+    </route>
+    <route url="/V1/product-questions/question/search" method="GET">
+        <service class="RoyalCyber\ProductQuestions\Api\QuestionRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="RoyalCyber_ProductQuestions::question"/>
+        </resources>
+    </route>
+    <route url="/V1/product-questions/question" method="POST">
+        <service class="RoyalCyber\ProductQuestions\Api\QuestionRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="RoyalCyber_ProductQuestions::question"/>
+        </resources>
+    </route>
+    <route url="/V1/product-questions/question/:id" method="PUT">
+        <service class="RoyalCyber\ProductQuestions\Api\QuestionRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="RoyalCyber_ProductQuestions::question"/>
+        </resources>
+    </route>
+    <route url="/V1/product-questions/question/:questionId" method="DELETE">
+        <service class="RoyalCyber\ProductQuestions\Api\QuestionRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="RoyalCyber_ProductQuestions::question"/>
+        </resources>
+    </route>
+    <!-- Product Answer -->
+    <route url="/V1/product-questions/answer/:answerId" method="GET">
+        <service class="RoyalCyber\ProductQuestions\Api\AnswerRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="RoyalCyber_ProductQuestions::answer"/>
+        </resources>
+    </route>
+    <route url="/V1/product-questions/answer/search" method="GET">
+        <service class="RoyalCyber\ProductQuestions\Api\AnswerRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="RoyalCyber_ProductQuestions::answer"/>
+        </resources>
+    </route>
+    <route url="/V1/product-questions/answer" method="POST">
+        <service class="RoyalCyber\ProductQuestions\Api\AnswerRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="RoyalCyber_ProductQuestions::answer"/>
+        </resources>
+    </route>
+    <route url="/V1/product-questions/answer/:id" method="PUT">
+        <service class="RoyalCyber\ProductQuestions\Api\AnswerRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="RoyalCyber_ProductQuestions::answer"/>
+        </resources>
+    </route>
+    <route url="/V1/product-questions/answer/:answerId" method="DELETE">
+        <service class="RoyalCyber\ProductQuestions\Api\AnswerRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="RoyalCyber_ProductQuestions::answer"/>
+        </resources>
+    </route>
+</routes>

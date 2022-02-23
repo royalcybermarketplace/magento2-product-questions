@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    RoyalCyber
+ * @package     RoyalCyber_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="RoyalCyber_ProductQuestions::menus" title="Product Questions" module="RoyalCyber_ProductQuestions" sortOrder="200" parent="Magento_Catalog::catalog" resource="RoyalCyber_ProductQuestions::menus"/>
+        <add id="RoyalCyber_ProductQuestions::question" title="Questions" translate="title" module="RoyalCyber_ProductQuestions" sortOrder="10" parent="RoyalCyber_ProductQuestions::menus" action="product_questions/question" resource="RoyalCyber_ProductQuestions::question"/>
+        <add id="RoyalCyber_ProductQuestions::answer" title="Answers" translate="title" module="RoyalCyber_ProductQuestions" sortOrder="20" parent="RoyalCyber_ProductQuestions::menus" action="product_questions/answer" resource="RoyalCyber_ProductQuestions::answer"/>
+    </menu>
+</config>

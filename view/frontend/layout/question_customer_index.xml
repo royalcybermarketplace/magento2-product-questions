@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    RoyalCyber
+ * @package     RoyalCyber_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="RoyalCyber_ProductQuestions::css/customer-questions.css"/>
+    </head>
+    <update handle="customer_account"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="RoyalCyber\ProductQuestions\Block\Customer\ListCustomer" name="question_customer_list" template="customer/list.phtml" cacheable="false"/>
+        </referenceContainer>
+    </body>
+</page>

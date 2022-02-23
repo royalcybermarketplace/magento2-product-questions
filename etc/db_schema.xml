@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    RoyalCyber
+ * @package     RoyalCyber_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+  <table name="royalcyber_product_questions_sharing" resource="default" engine="innodb" comment="Product Question To Product Linkage Table">
+    <column xsi:type="int" name="product_id" padding="10" unsigned="true" nullable="false" identity="false" comment="Product ID"/>
+    <column xsi:type="bigint" name="question_id" padding="20" unsigned="true" nullable="false" identity="false" comment="Question ID"/>
+    <constraint xsi:type="foreign" referenceId="ROYALCYBER_PRD_QUESTIONS_SHARING_PRD_ID_CAT_PRD_ENTT_ENTT_ID" table="royalcyber_product_questions_sharing" column="product_id" referenceTable="catalog_product_entity" referenceColumn="entity_id" onDelete="CASCADE"/>
+    <constraint xsi:type="foreign" referenceId="ROYALCYBER_PRD_QUESTIONS_SHARING_QUEST_ID" table="royalcyber_product_questions_sharing" column="question_id" referenceTable="royalcyber_product_questions" referenceColumn="question_id" onDelete="CASCADE"/>
+  </table>
+  <table name="royalcyber_product_questions_status" resource="default" engine="innodb" comment="Product Question and Answer statuses">
+    <column xsi:type="smallint" name="status_id" padding="5" unsigned="true" nullable="false" identity="true" comment="Status id"/>
+    <column xsi:type="varchar" name="status_code" nullable="false" length="32" comment="Status code"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+      <column name="status_id"/>
+    </constraint>
+  </table>
+  <table name="royalcyber_product_questions_store" resource="default" engine="innodb" comment="Product Question To Store Linkage Table">
+    <column xsi:type="smallint" name="store_view_id" padding="5" unsigned="true" nullable="true" identity="false" default="0" comment="Question shared in the store id"/>
+    <column xsi:type="bigint" name="question_id" padding="20" unsigned="true" nullable="false" identity="false" comment="Question ID"/>
+    <constraint xsi:type="foreign" referenceId="ROYALCYBER_PRODUCT_QUESTIONS_STORE_STORE_VIEW_ID_STORE_STORE_ID" table="royalcyber_product_questions_store" column="store_view_id" referenceTable="store" referenceColumn="store_id" onDelete="SET NULL"/>
+    <constraint xsi:type="foreign" referenceId="ROYALCYBER_PRODUCT_QUESTIONS_STORE_QUESTION_ID" table="royalcyber_product_questions_store" column="question_id" referenceTable="royalcyber_product_questions" referenceColumn="question_id" onDelete="CASCADE"/>
+  </table>
+  <table name="royalcyber_product_questions_user_type" resource="default" engine="innodb" comment="Product Question and Answer User Types">
+    <column xsi:type="smallint" name="user_type_id" padding="5" unsigned="true" nullable="false" identity="true" comment="User Type id"/>
+    <column xsi:type="varchar" name="user_type_code" nullable="false" length="32" comment="User Type code"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+      <column name="user_type_id"/>
+    </constraint>
+  </table>
+  <table name="royalcyber_product_questions_visibility" resource="default" engine="innodb" comment="Product Question and Answer Visibilities">
+    <column xsi:type="smallint" name="visibility_id" padding="5" unsigned="true" nullable="false" identity="true" comment="Visibility id"/>
+    <column xsi:type="varchar" name="visibility_code" nullable="false" length="32" comment="Visibility code"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+      <column name="visibility_id"/>
+    </constraint>
+  </table>
+  <table name="royalcyber_product_answers" resource="default" engine="innodb" comment="Answer's information of a question on a product">
+    <column xsi:type="bigint" name="answer_id" padding="20" unsigned="true" nullable="false" identity="true" comment="Answer ID"/>
+    <column xsi:type="longtext" name="answer_detail" nullable="false" comment="Content of answer"/>
+    <column xsi:type="text" name="answer_author_name" nullable="false" comment="author_name of respondent"/>
+    <column xsi:type="text" name="answer_author_email" nullable="false" comment="Email of respondent"/>
+    <column xsi:type="bigint" name="question_id" padding="20" unsigned="true" nullable="false" identity="false" comment="Question ID"/>
+    <column xsi:type="smallint" name="answer_status_id" padding="5" unsigned="true" nullable="false" identity="false" default="2" comment="Status code"/>
+    <column xsi:type="smallint" name="answer_user_type_id" padding="5" unsigned="true" nullable="false" identity="false" default="2" comment="User code"/>
+    <column xsi:type="int" name="answer_user_id" padding="10" unsigned="true" nullable="true" identity="false" comment="User ID"/>
+    <column xsi:type="smallint" name="answer_created_by" padding="5" unsigned="true" nullable="false" identity="false" default="2" comment="User code"/>
+    <column xsi:type="smallint" name="answer_visibility_id" padding="5" unsigned="true" nullable="false" identity="false" default="2" comment="Visibility code"/>
+    <column xsi:type="int" name="answer_likes" padding="10" unsigned="true" nullable="false" identity="false" default="0" comment="Total number of likes"/>
+    <column xsi:type="int" name="answer_dislikes" padding="10" unsigned="true" nullable="false" identity="false" default="0" comment="Total number of dislikes"/>
+    <column xsi:type="timestamp" name="answer_created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Answer create date"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+      <column name="answer_id"/>
+    </constraint>
+    <constraint xsi:type="foreign" referenceId="ROYALCYBER_PRODUCT_ANSWERS_ANSWER_STATUS_ID" table="royalcyber_product_answers" column="answer_status_id" referenceTable="royalcyber_product_questions_status" referenceColumn="status_id" onDelete="NO ACTION"/>
+    <constraint xsi:type="foreign" referenceId="ROYALCYBER_PRODUCT_ANSWERS_ANSWER_USER_TYPE_ID" table="royalcyber_product_answers" column="answer_user_type_id" referenceTable="royalcyber_product_questions_user_type" referenceColumn="user_type_id" onDelete="NO ACTION"/>
+    <constraint xsi:type="foreign" referenceId="ROYALCYBER_PRODUCT_ANSWERS_ANSWER_CREATED_BY" table="royalcyber_product_answers" column="answer_created_by" referenceTable="royalcyber_product_questions_user_type" referenceColumn="user_type_id" onDelete="NO ACTION"/>
+    <constraint xsi:type="foreign" referenceId="ROYALCYBER_PRODUCT_ANSWERS_ANSWER_VISIBILITY_ID" table="royalcyber_product_answers" column="answer_visibility_id" referenceTable="royalcyber_product_questions_visibility" referenceColumn="visibility_id" onDelete="NO ACTION"/>
+    <constraint xsi:type="foreign" referenceId="ROYALCYBER_PRODUCT_ANSWERS_ANSWER_QUESTION_ID" table="royalcyber_product_answers" column="question_id" referenceTable="royalcyber_product_questions" referenceColumn="question_id" onDelete="CASCADE"/>
+    <index referenceId="ROYALCYBER_PRD_ANSWERS_AD_AAN_AAE" indexType="fulltext">
+      <column name="answer_detail"/>
+      <column name="answer_author_name"/>
+      <column name="answer_author_email"/>
+    </index>
+  </table>
+  <table name="royalcyber_product_questions" resource="default" engine="innodb" comment="Question information of product">
+    <column xsi:type="bigint" name="question_id" padding="20" unsigned="true" nullable="false" identity="true" comment="Question ID"/>
+    <column xsi:type="longtext" name="question_detail" nullable="true" comment="Content of question"/>
+    <column xsi:type="text" name="question_author_name" nullable="false" comment="Question Author Name"/>
+    <column xsi:type="text" name="question_author_email" nullable="false" comment="Email of asker"/>
+    <column xsi:type="smallint" name="question_status_id" padding="5" unsigned="true" nullable="false" identity="false" default="2" comment="Status code"/>
+    <column xsi:type="smallint" name="question_user_type_id" padding="5" unsigned="true" nullable="false" identity="false" default="2" comment="User code"/>
+    <column xsi:type="int" name="customer_id" padding="10" unsigned="true" nullable="true" identity="false" comment="Customer ID"/>
+    <column xsi:type="smallint" name="question_visibility_id" padding="5" unsigned="true" nullable="false" identity="false" default="2" comment="Visibility code"/>
+    <column xsi:type="smallint" name="question_store_id" padding="5" unsigned="true" nullable="true" identity="false" default="0" comment="Question asked in the store id"/>
+    <column xsi:type="int" name="question_likes" padding="10" unsigned="true" nullable="false" identity="false" default="0" comment="Total number of likes"/>
+    <column xsi:type="int" name="question_dislikes" padding="10" unsigned="true" nullable="false" identity="false" default="0" comment="Total number of dislikes"/>
+    <column xsi:type="int" name="total_answers" padding="10" unsigned="true" nullable="false" identity="false" default="0" comment="Total number of answers"/>
+    <column xsi:type="int" name="pending_answers" padding="10" unsigned="true" nullable="false" identity="false" default="0" comment="Total number of pending answers"/>
+    <column xsi:type="int" name="product_id" padding="10" unsigned="true" nullable="false" identity="false" comment="Product ID"/>
+    <column xsi:type="smallint" name="question_created_by" padding="5" unsigned="true" nullable="false" identity="false" default="2" comment="User code"/>
+    <column xsi:type="timestamp" name="question_created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Question create date"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+      <column name="question_id"/>
+    </constraint>
+    <constraint xsi:type="foreign" referenceId="ROYALCYBER_PRODUCT_QUESTIONS_QUESTION_STATUS_ID" table="royalcyber_product_questions" column="question_status_id" referenceTable="royalcyber_product_questions_status" referenceColumn="status_id" onDelete="NO ACTION"/>
+    <constraint xsi:type="foreign" referenceId="ROYALCYBER_PRODUCT_QUESTIONS_QUESTION_USER_TYPE_ID" table="royalcyber_product_questions" column="question_user_type_id" referenceTable="royalcyber_product_questions_user_type" referenceColumn="user_type_id" onDelete="NO ACTION"/>
+    <constraint xsi:type="foreign" referenceId="ROYALCYBER_PRODUCT_QUESTIONS_QUESTION_CREATED_BY" table="royalcyber_product_questions" column="question_created_by" referenceTable="royalcyber_product_questions_user_type" referenceColumn="user_type_id" onDelete="NO ACTION"/>
+    <constraint xsi:type="foreign" referenceId="ROYALCYBER_PRODUCT_QUESTIONS_QUESTION_VISIBILITY_ID" table="royalcyber_product_questions" column="question_visibility_id" referenceTable="royalcyber_product_questions_visibility" referenceColumn="visibility_id" onDelete="NO ACTION"/>
+    <constraint xsi:type="foreign" referenceId="ROYALCYBER_PRODUCT_QUESTIONS_QUESTION_STORE_ID_STORE_STORE_ID" table="royalcyber_product_questions" column="question_store_id" referenceTable="store" referenceColumn="store_id" onDelete="SET NULL"/>
+    <constraint xsi:type="foreign" referenceId="ROYALCYBER_PRD_QUESTIONS_PRD_ID_CAT_PRD_ENTT_ENTT_ID" table="royalcyber_product_questions" column="product_id" referenceTable="catalog_product_entity" referenceColumn="entity_id" onDelete="NO ACTION"/>
+    <constraint xsi:type="foreign" referenceId="ROYALCYBER_PRD_QUESTIONS_CSTR_ID_CSTR_ENTT_ENTT_ID" table="royalcyber_product_questions" column="customer_id" referenceTable="customer_entity" referenceColumn="entity_id" onDelete="SET NULL"/>
+    <index referenceId="ROYALCYBER_PRD_QUESTIONS_QD_QAN_QAE" indexType="fulltext">
+      <column name="question_detail"/>
+      <column name="question_author_name"/>
+      <column name="question_author_email"/>
+    </index>
+  </table>
+</schema>

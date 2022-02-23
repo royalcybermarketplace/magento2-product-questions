@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    RoyalCyber
+ * @package     RoyalCyber_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ */
+ -->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <container name="root">
+        <block class="RoyalCyber\ProductQuestions\Block\Product\View\ListView" name="question.product.info.data" as="question_product_data" template="RoyalCyber_ProductQuestions::question/view/list.phtml" cacheable="false"/>
+    </container>
+</layout>

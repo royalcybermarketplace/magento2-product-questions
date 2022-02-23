@@ -1,0 +1,32 @@
+{
+    "name": "royalcybermarketplace/magento2-product-questions",
+    "description":"RoyalCyber Product Questions",
+    "keywords": [
+        "royalcyber",
+        "product questions",
+        "questions and answers",
+        "question product",
+        "product questions"
+    ],
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "authors": [
+        {
+            "name": "RoyalCyber",
+            "email": "saif.ali@royalcyber.com",
+            "role": "Magento 2 Solution Provider"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "RoyalCyber\\ProductQuestions\\": ""
+        }
+    }
+}

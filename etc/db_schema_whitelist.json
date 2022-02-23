@@ -1,0 +1,110 @@
+{
+    "royalcyber_product_questions_sharing": {
+        "column": {
+            "product_id": true,
+            "question_id": true
+        },
+        "constraint": {
+            "ROYALCYBER_PRD_QUESTIONS_SHARING_PRD_ID_CAT_PRD_ENTT_ENTT_ID": true,
+            "FK_F045E2E1777847CAB2D2DB8D4C3D9B31": true
+        }
+    },
+    "royalcyber_product_questions_status": {
+        "column": {
+            "status_id": true,
+            "status_code": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "royalcyber_product_questions_store": {
+        "column": {
+            "store_view_id": true,
+            "question_id": true
+        },
+        "constraint": {
+            "ROYALCYBER_PRODUCT_QUESTIONS_STORE_STORE_VIEW_ID_STORE_STORE_ID": true,
+            "FK_228D7FE042B5318263EE6F8A6DC076A8": true
+        }
+    },
+    "royalcyber_product_questions_user_type": {
+        "column": {
+            "user_type_id": true,
+            "user_type_code": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "royalcyber_product_questions_visibility": {
+        "column": {
+            "visibility_id": true,
+            "visibility_code": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "royalcyber_product_answers": {
+        "column": {
+            "answer_id": true,
+            "answer_detail": true,
+            "answer_author_name": true,
+            "answer_author_email": true,
+            "question_id": true,
+            "answer_status_id": true,
+            "answer_user_type_id": true,
+            "answer_user_id": true,
+            "answer_created_by": true,
+            "answer_visibility_id": true,
+            "answer_likes": true,
+            "answer_dislikes": true,
+            "answer_created_at": true
+        },
+        "index": {
+            "FTI_560AD1FBA8F4F633502357FE59B8E648": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FK_0236E8E4C4DCC62CF2C03F20A4CCC6C5": true,
+            "FK_70C94D26B487EB22CC3F4B7A86EF0DD5": true,
+            "FK_6E7038023DFC302C5E6BA016847DA494": true,
+            "FK_322A24D919CF2EDFBF4F481E6A0DDF2A": true,
+            "FK_AC9C6BB66013FB1603914C3473771B4F": true
+        }
+    },
+    "royalcyber_product_questions": {
+        "column": {
+            "question_id": true,
+            "question_detail": true,
+            "question_author_name": true,
+            "question_author_email": true,
+            "question_status_id": true,
+            "question_user_type_id": true,
+            "customer_id": true,
+            "question_visibility_id": true,
+            "question_store_id": true,
+            "question_likes": true,
+            "question_dislikes": true,
+            "total_answers": true,
+            "pending_answers": true,
+            "product_id": true,
+            "question_created_by": true,
+            "question_created_at": true
+        },
+        "index": {
+            "FTI_B14514E067C926FC6C7CBA9C5D476F43": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FK_89FC882BF6A93735980B45F22271097F": true,
+            "FK_06ABE7A9F0612015EBC282A5EB72DF27": true,
+            "FK_69A0ED3CFF595BCCFD05DCD6C6A73D9E": true,
+            "FK_032851589B6A0744E66803CE55184F0C": true,
+            "ROYALCYBER_PRODUCT_QUESTIONS_QUESTION_STORE_ID_STORE_STORE_ID": true,
+            "ROYALCYBER_PRD_QUESTIONS_PRD_ID_CAT_PRD_ENTT_ENTT_ID": true,
+            "ROYALCYBER_PRD_QUESTIONS_CSTR_ID_CSTR_ENTT_ENTT_ID": true
+        }
+    }
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    RoyalCyber
+ * @package     RoyalCyber_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="RoyalCyber_ProductQuestions::css/customer-questions.css"/>
+    </head>
+    <body>
+        <referenceBlock name="product.info.details">
+            <block class="RoyalCyber\ProductQuestions\Block\Product\Question" name="questions.tab" as="questions" template="RoyalCyber_ProductQuestions::question.phtml" group="detailed_info" cacheable="false">
+                <block class="RoyalCyber\ProductQuestions\Block\Form" name="product.question.form" as="question_form" template="RoyalCyber_ProductQuestions::question/form.phtml">
+                    <block class="RoyalCyber\ProductQuestions\Block\Form" name="product.question.popup" as="question_popup_content" template="RoyalCyber_ProductQuestions::question/popup.phtml" />
+                </block>
+            </block>
+        </referenceBlock>
+    </body>
+</page>
