@@ -1,11 +1,11 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Controller\Adminhtml\Answer;
+namespace RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Answer;
 
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Backend\App\Action;
@@ -13,7 +13,7 @@ use Magento\Framework\Exception\LocalizedException;
 
 /**
  * Class Save
- * @package RoyalCyber\ProductQuestions\Controller\Adminhtml\Answer
+ * @package RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Answer
  */
 class Save extends \Magento\Backend\App\Action implements HttpPostActionInterface
 {
@@ -22,35 +22,35 @@ class Save extends \Magento\Backend\App\Action implements HttpPostActionInterfac
      *
      * @see _isAllowed()
      */
-    const ADMIN_RESOURCE = 'RoyalCyber_ProductQuestions::answer_save';
+    const ADMIN_RESOURCE = 'RoyalCyberMarketplace_ProductQuestions::answer_save';
 
     /**
-     * @var \RoyalCyber\ProductQuestions\Model\AnswerFactory
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\AnswerFactory
      */
     private $answerFactory;
 
     /**
-     * @var \RoyalCyber\ProductQuestions\Api\AnswerRepositoryInterface
+     * @var \RoyalCyberMarketplace\ProductQuestions\Api\AnswerRepositoryInterface
      */
     private $answerRepository;
 
     /**
      * Save constructor.
      * @param Action\Context $context
-     * @param \RoyalCyber\ProductQuestions\Model\AnswerFactory|null $answerFactory
-     * @param \RoyalCyber\ProductQuestions\Api\QuestionRepositoryInterface|null $answerRepository
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\AnswerFactory|null $answerFactory
+     * @param \RoyalCyberMarketplace\ProductQuestions\Api\QuestionRepositoryInterface|null $answerRepository
      */
     public function __construct(
         Action\Context $context,
-        \RoyalCyber\ProductQuestions\Model\AnswerFactory $answerFactory = null,
-        \RoyalCyber\ProductQuestions\Api\QuestionRepositoryInterface $answerRepository = null
+        \RoyalCyberMarketplace\ProductQuestions\Model\AnswerFactory $answerFactory = null,
+        \RoyalCyberMarketplace\ProductQuestions\Api\QuestionRepositoryInterface $answerRepository = null
     ) {
         $this->answerFactory = $answerFactory
             ?: \Magento\Framework\App\ObjectManager::getInstance()
-                ->get(\RoyalCyber\ProductQuestions\Model\AnswerFactory::class);
+                ->get(\RoyalCyberMarketplace\ProductQuestions\Model\AnswerFactory::class);
         $this->answerRepository = $answerRepository
             ?: \Magento\Framework\App\ObjectManager::getInstance()
-                ->get(\RoyalCyber\ProductQuestions\Api\AnswerRepositoryInterface::class);
+                ->get(\RoyalCyberMarketplace\ProductQuestions\Api\AnswerRepositoryInterface::class);
         parent::__construct($context);
     }
 
@@ -66,7 +66,7 @@ class Save extends \Magento\Backend\App\Action implements HttpPostActionInterfac
         /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
         $resultRedirect = $this->resultRedirectFactory->create();
         if ($data) {
-            /** @var \RoyalCyber\ProductQuestions\Model\Question $model */
+            /** @var \RoyalCyberMarketplace\ProductQuestions\Model\Question $model */
             $model = $this->answerFactory->create();
 
             $id = $this->getRequest()->getParam('answer_id');
@@ -83,7 +83,7 @@ class Save extends \Magento\Backend\App\Action implements HttpPostActionInterfac
             $model->setData($data);
 
             $this->_eventManager->dispatch(
-                'royalcyber_product_answers_prepare_save',
+                'royalcybermarketplace_product_answers_prepare_save',
                 ['answer' => $model, 'request' => $this->getRequest()]
             );
 

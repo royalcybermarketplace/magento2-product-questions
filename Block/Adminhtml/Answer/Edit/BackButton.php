@@ -1,10 +1,10 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
-namespace RoyalCyber\ProductQuestions\Block\Adminhtml\Answer\Edit;
+namespace RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Answer\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 

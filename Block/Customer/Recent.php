@@ -1,11 +1,11 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Block\Customer;
+namespace RoyalCyberMarketplace\ProductQuestions\Block\Customer;
 
 /**
  * Recent Customer Questions Block
@@ -15,7 +15,7 @@ class Recent extends \Magento\Framework\View\Element\Template
     /**
      * Product questions collection
      *
-     * @var \RoyalCyber\ProductQuestions\Model\ResourceModel\Question\Collection
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\Collection
      */
     protected $collection;
 
@@ -32,22 +32,22 @@ class Recent extends \Magento\Framework\View\Element\Template
     protected $currentCustomer;
 
     /**
-     * @var \RoyalCyber\ProductQuestions\Model\Config\Source\FormatDateTime
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\Config\Source\FormatDateTime
      */
     protected $formatDateTime;
 
     /**
      * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \RoyalCyber\ProductQuestions\Model\ResourceModel\Question\CollectionFactory $questionColFactory
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\CollectionFactory $questionColFactory
      * @param \Magento\Customer\Helper\Session\CurrentCustomer $currentCustomer
-     * @param \RoyalCyber\ProductQuestions\Model\Config\Source\FormatDateTime $formatDateTime
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\Config\Source\FormatDateTime $formatDateTime
      * @param array $data
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
-        \RoyalCyber\ProductQuestions\Model\ResourceModel\Question\CollectionFactory $questionColFactory,
+        \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\CollectionFactory $questionColFactory,
         \Magento\Customer\Helper\Session\CurrentCustomer $currentCustomer,
-        \RoyalCyber\ProductQuestions\Model\Config\Source\FormatDateTime $formatDateTime,
+        \RoyalCyberMarketplace\ProductQuestions\Model\Config\Source\FormatDateTime $formatDateTime,
         array $data = []
     ) {
         $this->questionColFactory = $questionColFactory;
@@ -59,7 +59,7 @@ class Recent extends \Magento\Framework\View\Element\Template
     /**
      * Return collection of questions
      *
-     * @return array|\RoyalCyber\ProductQuestions\Model\ResourceModel\Question\Collection
+     * @return array|\RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\Collection
      */
     public function getQuestions()
     {

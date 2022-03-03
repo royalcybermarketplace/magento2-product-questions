@@ -1,16 +1,16 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Block\Adminhtml;
+namespace RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml;
 
 /**
  * Adminhtml add Product Question main block
  *
- * @author Magento RoyalCyber Team <royalcyber@gmail.com>
+ * @author Magento RoyalCyberMarketplace Team <royalcybermarketplace@gmail.com>
  */
 class Add extends \Magento\Backend\Block\Widget\Form\Container
 {
@@ -23,7 +23,7 @@ class Add extends \Magento\Backend\Block\Widget\Form\Container
     {
         parent::_construct();
 
-        $this->_blockGroup = 'RoyalCyber_ProductQuestions';
+        $this->_blockGroup = 'RoyalCyberMarketplace_ProductQuestions';
         $this->_controller = 'adminhtml';
         $this->_mode = 'add';
 

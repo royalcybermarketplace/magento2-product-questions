@@ -1,11 +1,11 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Controller\Product;
+namespace RoyalCyberMarketplace\ProductQuestions\Controller\Product;
 
 use Magento\Framework\Exception\NoSuchEntityException;
 
@@ -41,7 +41,7 @@ class LikeDislike extends \Magento\Framework\App\Action\Action
 
         if ($this->getRequest()->isAjax()) {
             if ($this->getRequest()->getParam('onType')) {
-                $data = $this->processUpdate(\RoyalCyber\ProductQuestions\Model\Answer::class, \RoyalCyber\ProductQuestions\Model\ResourceModel\Answer::class, 'answer_id');
+                $data = $this->processUpdate(\RoyalCyberMarketplace\ProductQuestions\Model\Answer::class, \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer::class, 'answer_id');
             }
         }
 

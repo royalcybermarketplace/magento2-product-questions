@@ -1,11 +1,11 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Api\Data;
+namespace RoyalCyberMarketplace\ProductQuestions\Api\Data;
 
 /**
  * Interface AnswerInterface
@@ -127,7 +127,7 @@ interface AnswerInterface
      * Set ID
      *
      * @param int $id
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setId($id);
 
@@ -135,7 +135,7 @@ interface AnswerInterface
      * Set answer detail
      *
      * @param string $answerDetail
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerDetail($answerDetail);
 
@@ -143,7 +143,7 @@ interface AnswerInterface
      * Set answer author name
      *
      * @param string $answerAuthorName
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerAuthorName($answerAuthorName);
 
@@ -151,7 +151,7 @@ interface AnswerInterface
      * Set answer author email
      *
      * @param string $answerAuthorEmail
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerAuthorEmail($answerAuthorEmail);
 
@@ -159,7 +159,7 @@ interface AnswerInterface
      * Set question Id
      *
      * @param int $questionId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setQuestionId($questionId);
 
@@ -167,7 +167,7 @@ interface AnswerInterface
      * Set answer status id
      *
      * @param int $answerStatusId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerStatusId($answerStatusId);
 
@@ -175,7 +175,7 @@ interface AnswerInterface
      * Set answer user type id
      *
      * @param int $answerUserTypeId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerUserTypeId($answerUserTypeId);
 
@@ -183,7 +183,7 @@ interface AnswerInterface
      * Set answer user id
      *
      * @param int $answerUserId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerUserId($answerUserId);
 
@@ -191,7 +191,7 @@ interface AnswerInterface
      * Set answer created by
      *
      * @param int $answerCreatedBy
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerCreatedBy($answerCreatedBy);
 
@@ -199,7 +199,7 @@ interface AnswerInterface
      * Set answer visibility id
      *
      * @param int $answerVisibilityId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerVisibilityId($answerVisibilityId);
 
@@ -207,7 +207,7 @@ interface AnswerInterface
      * Set answer likes
      *
      * @param int $answerLikes
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerLikes($answerLikes);
 
@@ -215,7 +215,7 @@ interface AnswerInterface
      * Set answer dislikes
      *
      * @param int $answerDislikes
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerDislikes($answerDislikes);
 
@@ -223,7 +223,7 @@ interface AnswerInterface
      * Set answer created at
      *
      * @param int $answerCreatedAt
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerCreatedAt($answerCreatedAt);
 }

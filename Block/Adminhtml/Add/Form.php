@@ -1,37 +1,37 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Block\Adminhtml\Add;
+namespace RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Add;
 
 /**
  * Adminhtml add product question form
  *
- * @author   Magento RoyalCyber Team <royalcyber@gmail.com>
+ * @author   Magento RoyalCyberMarketplace Team <royalcybermarketplace@gmail.com>
  */
 class Form extends \Magento\Backend\Block\Widget\Form\Generic
 {
     /**
      * Question statuses
      *
-     * @var \RoyalCyber\ProductQuestions\Model\Status
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\Status
      */
     protected $_questionStatus = null;
 
     /**
      * Question User types
      *
-     * @var \RoyalCyber\ProductQuestions\Model\UserType
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\UserType
      */
     protected $_questionUserType = null;
 
     /**
      * Question User types
      *
-     * @var \RoyalCyber\ProductQuestions\Model\Visibility
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\Visibility
      */
     protected $_questionVisibility = null;
 
@@ -47,9 +47,9 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
      * @param \Magento\Framework\Registry $registry
      * @param \Magento\Framework\Data\FormFactory $formFactory
      * @param \Magento\Store\Model\System\Store $systemStore
-     * @param \RoyalCyber\ProductQuestions\Model\Status $questionStatus,
-     * @param \RoyalCyber\ProductQuestions\Model\UserType $questionUserType
-     * @param \RoyalCyber\ProductQuestions\Model\Visibility $questionVisibility
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\Status $questionStatus,
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\UserType $questionUserType
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\Visibility $questionVisibility
      * @param array $data
      */
     public function __construct(
@@ -57,9 +57,9 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
         \Magento\Framework\Registry $registry,
         \Magento\Framework\Data\FormFactory $formFactory,
         \Magento\Store\Model\System\Store $systemStore,
-        \RoyalCyber\ProductQuestions\Model\Status $questionStatus,
-        \RoyalCyber\ProductQuestions\Model\UserType $questionUserType,
-        \RoyalCyber\ProductQuestions\Model\Visibility $questionVisibility,
+        \RoyalCyberMarketplace\ProductQuestions\Model\Status $questionStatus,
+        \RoyalCyberMarketplace\ProductQuestions\Model\UserType $questionUserType,
+        \RoyalCyberMarketplace\ProductQuestions\Model\Visibility $questionVisibility,
         array $data = []
     ) {
         $this->_questionStatus = $questionStatus;

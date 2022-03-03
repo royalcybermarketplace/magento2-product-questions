@@ -1,18 +1,18 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Model\Config\Source;
+namespace RoyalCyberMarketplace\ProductQuestions\Model\Config\Source;
 
 use Magento\Framework\Stdlib\DateTime\TimezoneInterface;
 use Magento\Store\Model\StoreManagerInterface;
 
 /**
  * Class FormatDateTime
- * @package RoyalCyber\ProductQuestions\Model\Config\Source
+ * @package RoyalCyberMarketplace\ProductQuestions\Model\Config\Source
  */
 class FormatDateTime
 {

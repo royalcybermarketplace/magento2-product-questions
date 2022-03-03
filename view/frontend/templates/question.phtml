@@ -1,10 +1,10 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  *
- * @var $block \RoyalCyber\ProductQuestions\Block\Product\Question
+ * @var $block \RoyalCyberMarketplace\ProductQuestions\Block\Product\Question
  */
 ?>
 
@@ -14,14 +14,14 @@
 <script type="text/x-magento-init">
     {
         "*": {
-            "RoyalCyber_ProductQuestions/js/process-questions": {
+            "RoyalCyberMarketplace_ProductQuestions/js/process-questions": {
                 "productQuestionUrl": "<?php /* @escapeNotVerified */ echo $block->getProductQuestionUrl();?>"
             }
         },
         "#product-question-container": {
-            "RoyalCyber_ProductQuestions/js/process-like-dislike": {
+            "RoyalCyberMarketplace_ProductQuestions/js/process-like-dislike": {
                 "likeDislikeUrl": "<?php /* @escapeNotVerified */ echo $block->getLikeDislikeUrl();?>",
-                "loadingNumberImage": "<?php echo $block->getViewFileUrl('RoyalCyber_ProductQuestions::images/loading-number.gif'); ?>"
+                "loadingNumberImage": "<?php echo $block->getViewFileUrl('RoyalCyberMarketplace_ProductQuestions::images/loading-number.gif'); ?>"
             }
         }
     }

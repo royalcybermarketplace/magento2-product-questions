@@ -1,18 +1,18 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Controller\Adminhtml\Question;
+namespace RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Question;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Backend\App\Action;
 
 /**
  * Class Edit
- * @package RoyalCyber\ProductQuestions\Controller\Adminhtml\Question
+ * @package RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Question
  */
 class Edit extends Action implements HttpGetActionInterface
 {
@@ -22,7 +22,7 @@ class Edit extends Action implements HttpGetActionInterface
      *
      * @see _isAllowed()
      */
-    const ADMIN_RESOURCE = 'RoyalCyber_ProductQuestions::question_save';
+    const ADMIN_RESOURCE = 'RoyalCyberMarketplace_ProductQuestions::question_save';
 
     /**
      * Core registry
@@ -61,7 +61,7 @@ class Edit extends Action implements HttpGetActionInterface
         // load layout, set active menu and breadcrumbs
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('RoyalCyber_ProductQuestions::menus')
+        $resultPage->setActiveMenu('RoyalCyberMarketplace_ProductQuestions::menus')
             ->addBreadcrumb(__('Product Questions'), __('Product Questions'))
             ->addBreadcrumb(__('Manage Questions'), __('Manage Questions'));
         return $resultPage;
@@ -77,7 +77,7 @@ class Edit extends Action implements HttpGetActionInterface
     {
         // 1. Get ID and create model
         $id = $this->getRequest()->getParam('question_id');
-        $model = $this->_objectManager->create(\RoyalCyber\ProductQuestions\Model\Question::class);
+        $model = $this->_objectManager->create(\RoyalCyberMarketplace\ProductQuestions\Model\Question::class);
 
         // 2. Initial checking
         if ($id) {
@@ -90,7 +90,7 @@ class Edit extends Action implements HttpGetActionInterface
             }
         }
 
-        $this->_coreRegistry->register('royalcyber_product_questions', $model);
+        $this->_coreRegistry->register('royalcybermarketplace_product_questions', $model);
 
         // 5. Build edit form
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
@@ -102,7 +102,7 @@ class Edit extends Action implements HttpGetActionInterface
         $resultPage->getConfig()->getTitle()->prepend(__('Questions'));
         $resultPage->getConfig()->getTitle()
             ->prepend($model->getId() ? __('Edit Question') : __('New Question'));
-        $resultPage->addContent($resultPage->getLayout()->createBlock(\RoyalCyber\ProductQuestions\Block\Adminhtml\Edit::class));
+        $resultPage->addContent($resultPage->getLayout()->createBlock(\RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Edit::class));
         return $resultPage;
     }
 }

@@ -1,11 +1,11 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Api\Data;
+namespace RoyalCyberMarketplace\ProductQuestions\Api\Data;
 
 /**
  * Interface QuestionInterface
@@ -151,7 +151,7 @@ interface QuestionInterface
      * Set ID
      *
      * @param int $id
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setId($id);
 
@@ -159,7 +159,7 @@ interface QuestionInterface
      * Set question detail
      *
      * @param string $questionDetail
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionDetail($questionDetail);
 
@@ -167,7 +167,7 @@ interface QuestionInterface
      * Set question author name
      *
      * @param string $questionAuthorName
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionAuthorName($questionAuthorName);
 
@@ -175,7 +175,7 @@ interface QuestionInterface
      * Set question author email
      *
      * @param string $questionAuthorEmail
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionAuthorEmail($questionAuthorEmail);
 
@@ -183,7 +183,7 @@ interface QuestionInterface
      * Set question status id
      *
      * @param int $questionStatusId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionStatusId($questionStatusId);
 
@@ -191,7 +191,7 @@ interface QuestionInterface
      * Set question user type id
      *
      * @param int $questionUserTypeId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionUserTypeId($questionUserTypeId);
 
@@ -199,7 +199,7 @@ interface QuestionInterface
      * Set customer id
      *
      * @param int|null $customerId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setCustomerId($customerId);
 
@@ -207,7 +207,7 @@ interface QuestionInterface
      * Set question visibility id
      *
      * @param int $questionVisibilityId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionVisibilityId($questionVisibilityId);
 
@@ -215,7 +215,7 @@ interface QuestionInterface
      * Set question store id
      *
      * @param int $questionStoreId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionStoreId($questionStoreId);
 
@@ -223,7 +223,7 @@ interface QuestionInterface
      * Set question likes
      *
      * @param int $questionLikes
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionLikes($questionLikes);
 
@@ -231,7 +231,7 @@ interface QuestionInterface
      * Set question dislike
      *
      * @param int $questionDislikes
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionDislikes($questionDislikes);
 
@@ -239,7 +239,7 @@ interface QuestionInterface
      * Set total answers
      *
      * @param int $totalAnswers
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setTotalAnswers($totalAnswers);
 
@@ -247,7 +247,7 @@ interface QuestionInterface
      * Set pending answers
      *
      * @param int $pendingAnswers
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setPendingAnswers($pendingAnswers);
 
@@ -255,7 +255,7 @@ interface QuestionInterface
      * Set product id
      *
      * @param int $productId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setProductId($productId);
 
@@ -263,7 +263,7 @@ interface QuestionInterface
      * Set question created by
      *
      * @param int $questionCreatedBy
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionCreatedBy($questionCreatedBy);
 
@@ -271,7 +271,7 @@ interface QuestionInterface
      * Set question created at
      *
      * @param string $questionCreatedAt
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionCreatedAt($questionCreatedAt);
 }

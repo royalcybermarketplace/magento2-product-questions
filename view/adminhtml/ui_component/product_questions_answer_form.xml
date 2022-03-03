@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
  -->
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
@@ -16,9 +16,9 @@
     </argument>
     <settings>
         <buttons>
-            <button name="save" class="RoyalCyber\ProductQuestions\Block\Adminhtml\Answer\Edit\SaveButton"/>
-            <button name="delete" class="RoyalCyber\ProductQuestions\Block\Adminhtml\Answer\Edit\DeleteButton"/>
-            <button name="back" class="RoyalCyber\ProductQuestions\Block\Adminhtml\Answer\Edit\BackButton"/>
+            <button name="save" class="RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Answer\Edit\SaveButton"/>
+            <button name="delete" class="RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Answer\Edit\DeleteButton"/>
+            <button name="back" class="RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Answer\Edit\BackButton"/>
         </buttons>
         <namespace>product_questions_answer_form</namespace>
         <dataScope>data</dataScope>
@@ -35,7 +35,7 @@
         <settings>
             <submitUrl path="product_questions/answer/save"/>
         </settings>
-        <dataProvider class="RoyalCyber\ProductQuestions\Model\Answer\DataProvider" name="answer_form_data_source">
+        <dataProvider class="RoyalCyberMarketplace\ProductQuestions\Model\Answer\DataProvider" name="answer_form_data_source">
             <settings>
                 <requestFieldName>answer_id</requestFieldName>
                 <primaryFieldName>answer_id</primaryFieldName>
@@ -75,7 +75,7 @@
             <formElements>
                 <select>
                     <settings>
-                        <options class="RoyalCyber\ProductQuestions\Model\Status"/>
+                        <options class="RoyalCyberMarketplace\ProductQuestions\Model\Status"/>
                     </settings>
                 </select>
             </formElements>
@@ -97,7 +97,7 @@
             <formElements>
                 <select>
                     <settings>
-                        <options class="RoyalCyber\ProductQuestions\Model\Answer\Source\Question"/>
+                        <options class="RoyalCyberMarketplace\ProductQuestions\Model\Answer\Source\Question"/>
                         <caption translate="true">-- Please Select --</caption>
                     </settings>
                 </select>
@@ -195,7 +195,7 @@
             <formElements>
                 <select>
                     <settings>
-                        <options class="RoyalCyber\ProductQuestions\Model\Visibility"/>
+                        <options class="RoyalCyberMarketplace\ProductQuestions\Model\Visibility"/>
                     </settings>
                 </select>
             </formElements>
@@ -217,7 +217,7 @@
             <formElements>
                 <select>
                     <settings>
-                        <options class="RoyalCyber\ProductQuestions\Model\UserType"/>
+                        <options class="RoyalCyberMarketplace\ProductQuestions\Model\UserType"/>
                     </settings>
                 </select>
             </formElements>
@@ -239,7 +239,7 @@
             <formElements>
                 <select>
                     <settings>
-                        <options class="RoyalCyber\ProductQuestions\Model\UserType"/>
+                        <options class="RoyalCyberMarketplace\ProductQuestions\Model\UserType"/>
                     </settings>
                 </select>
             </formElements>

@@ -1,17 +1,17 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Helper;
+namespace RoyalCyberMarketplace\ProductQuestions\Helper;
 
 use Magento\Store\Model\ScopeInterface;
 
 /**
  * Class Helper Data
- * @package RoyalCyber\ProductQuestions\Helper
+ * @package RoyalCyberMarketplace\ProductQuestions\Helper
  */
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
@@ -37,19 +37,19 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     protected $customerSession;
 
     /**
-     * @var \RoyalCyber\ProductQuestions\Model\Status
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\Status
      */
     protected $statusCode;
 
     /**
      * @param \Magento\Framework\App\Helper\Context $context
      * @param \Magento\Customer\Model\Session $customerSession
-     * @param \RoyalCyber\ProductQuestions\Model\Status $statusCode
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\Status $statusCode
      */
     public function __construct(
         \Magento\Framework\App\Helper\Context $context,
         \Magento\Customer\Model\Session $customerSession,
-        \RoyalCyber\ProductQuestions\Model\Status $statusCode
+        \RoyalCyberMarketplace\ProductQuestions\Model\Status $statusCode
     ) {
         $this->customerSession = $customerSession;
         $this->statusCode = $statusCode;

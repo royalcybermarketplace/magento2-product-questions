@@ -1,21 +1,21 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
-namespace RoyalCyber\ProductQuestions\Block\Adminhtml;
+namespace RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml;
 
 /**
  * Class Question Edit Form
- * @package RoyalCyber\ProductQuestions\Block\Adminhtml\Question
+ * @package RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Question
  */
 class Edit extends \Magento\Backend\Block\Widget\Form\Container
 {
     /**
      * Review action pager
      *
-     * @var \RoyalCyber\ProductQuestions\Helper\Action\Pager
+     * @var \RoyalCyberMarketplace\ProductQuestions\Helper\Action\Pager
      */
     protected $_questionActionPager = null;
 
@@ -29,15 +29,15 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
     /**
      * Review model factory
      *
-     * @var \RoyalCyber\ProductQuestions\Model\QuestionFactory
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\QuestionFactory
      */
     protected $_questionFactory;
 
     public function __construct(
         \Magento\Backend\Block\Widget\Context $context,
         \Magento\Framework\Registry $coreRegistry,
-        \RoyalCyber\ProductQuestions\Helper\Action\Pager $questionActionPager,
-        \RoyalCyber\ProductQuestions\Model\QuestionFactory $questionFactory,
+        \RoyalCyberMarketplace\ProductQuestions\Helper\Action\Pager $questionActionPager,
+        \RoyalCyberMarketplace\ProductQuestions\Model\QuestionFactory $questionFactory,
         array $data = []
     ) {
         $this->_coreRegistry = $coreRegistry;
@@ -57,10 +57,10 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
         parent::_construct();
 
         $this->_objectId    = 'question_id';
-        $this->_blockGroup  = 'RoyalCyber_ProductQuestions';
+        $this->_blockGroup  = 'RoyalCyberMarketplace_ProductQuestions';
         $this->_controller  = 'adminhtml';
 
-        /** @var $actionPager \RoyalCyber\ProductQuestions\Helper\Action\Pager */
+        /** @var $actionPager \RoyalCyberMarketplace\ProductQuestions\Helper\Action\Pager */
         $actionPager = $this->_questionActionPager;
         $actionPager->setStorageId('product_questions');
 

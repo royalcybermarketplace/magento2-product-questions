@@ -1,26 +1,26 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Model;
+namespace RoyalCyberMarketplace\ProductQuestions\Model;
 
-use RoyalCyber\ProductQuestions\Api\Data;
-use RoyalCyber\ProductQuestions\Api\AnswerRepositoryInterface;
+use RoyalCyberMarketplace\ProductQuestions\Api\Data;
+use RoyalCyberMarketplace\ProductQuestions\Api\AnswerRepositoryInterface;
 use Magento\Framework\Api\DataObjectHelper;
 use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
 use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Reflection\DataObjectProcessor;
-use RoyalCyber\ProductQuestions\Model\ResourceModel\Answer as ResourceAnswer;
-use RoyalCyber\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory as AnswerCollectionFactory;
+use RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer as ResourceAnswer;
+use RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory as AnswerCollectionFactory;
 
 /**
  * Class AnswerRepository
- * @package RoyalCyber\ProductQuestions\Model
+ * @package RoyalCyberMarketplace\ProductQuestions\Model
  */
 class AnswerRepository implements AnswerRepositoryInterface
 {
@@ -55,7 +55,7 @@ class AnswerRepository implements AnswerRepositoryInterface
     protected $dataObjectProcessor;
 
     /**
-     * @var \RoyalCyber\ProductQuestions\Api\Data\AnswerInterfaceFactory
+     * @var \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterfaceFactory
      */
     protected $dataAnswerFactory;
 
@@ -98,11 +98,11 @@ class AnswerRepository implements AnswerRepositoryInterface
     /**
      * Save Answer data
      *
-     * @param \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface $answer
+     * @param \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface $answer
      * @return Answer
      * @throws CouldNotSaveException
      */
-    public function save(\RoyalCyber\ProductQuestions\Api\Data\AnswerInterface $answer)
+    public function save(\RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface $answer)
     {
         try {
             $this->resource->save($answer);
@@ -138,11 +138,11 @@ class AnswerRepository implements AnswerRepositoryInterface
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      * @SuppressWarnings(PHPMD.NPathComplexity)
      * @param \Magento\Framework\Api\SearchCriteriaInterface $criteria
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerSearchResultsInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerSearchResultsInterface
      */
     public function getList(\Magento\Framework\Api\SearchCriteriaInterface $criteria)
     {
-        /** @var \RoyalCyber\ProductQuestions\Model\ResourceModel\Answer\Collection $collection */
+        /** @var \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer\Collection $collection */
         $collection = $this->answerCollectionFactory->create();
 
         $this->collectionProcessor->process($criteria, $collection);
@@ -158,11 +158,11 @@ class AnswerRepository implements AnswerRepositoryInterface
     /**
      * Delete Answer
      *
-     * @param \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface $answer
+     * @param \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface $answer
      * @return bool
      * @throws CouldNotDeleteException
      */
-    public function delete(\RoyalCyber\ProductQuestions\Api\Data\AnswerInterface $answer)
+    public function delete(\RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface $answer)
     {
         try {
             $this->resource->delete($answer);
@@ -198,7 +198,7 @@ class AnswerRepository implements AnswerRepositoryInterface
     {
         if (!$this->collectionProcessor) {
             $this->collectionProcessor = \Magento\Framework\App\ObjectManager::getInstance()->get(
-                'RoyalCyber\ProductQuestions\Model\Api\SearchCriteria\AnswerCollectionProcessor'
+                'RoyalCyberMarketplace\ProductQuestions\Model\Api\SearchCriteria\AnswerCollectionProcessor'
             );
         }
         return $this->collectionProcessor;

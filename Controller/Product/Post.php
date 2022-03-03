@@ -1,22 +1,22 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Controller\Product;
+namespace RoyalCyberMarketplace\ProductQuestions\Controller\Product;
 
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\TestFramework\Inspection\Exception;
-use RoyalCyber\ProductQuestions\Model\Status;
-use RoyalCyber\ProductQuestions\Model\Visibility;
-use RoyalCyber\ProductQuestions\Model\UserType;
+use RoyalCyberMarketplace\ProductQuestions\Model\Status;
+use RoyalCyberMarketplace\ProductQuestions\Model\Visibility;
+use RoyalCyberMarketplace\ProductQuestions\Model\UserType;
 
 /**
  * Class Post
- * @package RoyalCyber\ProductQuestions\Controller\Product
+ * @package RoyalCyberMarketplace\ProductQuestions\Controller\Product
  */
 class Post extends \Magento\Framework\App\Action\Action
 {
@@ -56,14 +56,14 @@ class Post extends \Magento\Framework\App\Action\Action
     /**
      * Question model
      *
-     * @var \RoyalCyber\ProductQuestions\Model\QuestionFactory
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\QuestionFactory
      */
     protected $questionFactory;
 
     /**
      * Answer model
      *
-     * @var \RoyalCyber\ProductQuestions\Model\AnswerFactory
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\AnswerFactory
      */
     protected $answerFactory;
 
@@ -73,7 +73,7 @@ class Post extends \Magento\Framework\App\Action\Action
     protected $customerSession;
 
     /**
-     * @var \RoyalCyber\ProductQuestions\Helper\Data
+     * @var \RoyalCyberMarketplace\ProductQuestions\Helper\Data
      */
     protected $questionData;
 
@@ -83,9 +83,9 @@ class Post extends \Magento\Framework\App\Action\Action
      * @param \Magento\Framework\Session\Generic $submitSession
      * @param \Magento\Catalog\Api\ProductRepositoryInterface $productRepository
      * @param \Magento\Store\Model\StoreManagerInterface $storeManager
-     * @param \RoyalCyber\ProductQuestions\Model\QuestionFactory $questionFactory
-     * @param \RoyalCyber\ProductQuestions\Model\AnswerFactory $answerFactory
-     * @param \RoyalCyber\ProductQuestions\Helper\Data $questionData
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\QuestionFactory $questionFactory
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\AnswerFactory $answerFactory
+     * @param \RoyalCyberMarketplace\ProductQuestions\Helper\Data $questionData
      * @param UserType $userType
      * @param \Magento\Customer\Model\Session $customerSession
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
@@ -96,10 +96,10 @@ class Post extends \Magento\Framework\App\Action\Action
         \Magento\Framework\Session\Generic $submitSession,
         \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
-        \RoyalCyber\ProductQuestions\Model\QuestionFactory $questionFactory,
-        \RoyalCyber\ProductQuestions\Model\AnswerFactory $answerFactory,
+        \RoyalCyberMarketplace\ProductQuestions\Model\QuestionFactory $questionFactory,
+        \RoyalCyberMarketplace\ProductQuestions\Model\AnswerFactory $answerFactory,
         \Magento\Customer\Model\Session $customerSession,
-        \RoyalCyber\ProductQuestions\Helper\Data $questionData,
+        \RoyalCyberMarketplace\ProductQuestions\Helper\Data $questionData,
         UserType $userType
     ) {
         $this->formKeyValidator = $formKeyValidator;
@@ -173,7 +173,7 @@ class Post extends \Magento\Framework\App\Action\Action
                 $text = 'answer';
                 $messageSuccess = __('You submitted your %1 for moderation.', $text);
                 if ($this->questionData->getAutoApprovalNewAnswer()) {
-                    $data['answer_status_id'] = \RoyalCyber\ProductQuestions\Model\Status::STATUS_APPROVED;
+                    $data['answer_status_id'] = \RoyalCyberMarketplace\ProductQuestions\Model\Status::STATUS_APPROVED;
                     $messageSuccess = __('You submitted your %1 successfully.', $text);
                 }
                 $model = $this->answerFactory->create();
@@ -191,7 +191,7 @@ class Post extends \Magento\Framework\App\Action\Action
                 unset($data['question_id']);
                 $model = $this->questionFactory->create();
                 if ($this->questionData->getAutoApprovalNewQuestion()) {
-                    $data['question_status_id'] = \RoyalCyber\ProductQuestions\Model\Status::STATUS_APPROVED;
+                    $data['question_status_id'] = \RoyalCyberMarketplace\ProductQuestions\Model\Status::STATUS_APPROVED;
                     $messageSuccess = __('You submitted your %1 successfully.', $text);
                 }
                 break;

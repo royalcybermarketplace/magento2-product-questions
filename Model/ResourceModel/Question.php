@@ -1,25 +1,25 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Model\ResourceModel;
+namespace RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel;
 
 use Magento\Framework\Model\AbstractModel;
 use Magento\Framework\Exception\LocalizedException;
 
 /**
  * Class Question
- * @package RoyalCyber\ProductQuestions\Model\ResourceModel
+ * @package RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel
  */
 class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
     /**
      * ValidationRules
      *
-     * @var \RoyalCyber\ProductQuestions\Model\ValidationRules
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\ValidationRules
      */
     protected $validationRules;
 
@@ -47,7 +47,7 @@ class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 
     /**
      * @param \Magento\Framework\Model\ResourceModel\Db\Context $context
-     * @param \RoyalCyber\ProductQuestions\Model\ValidationRules $validationRules
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\ValidationRules $validationRules
      * @param \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory
      * @param \Magento\Catalog\Model\Product\Attribute\Source\Status $productStatus
      * @param \Magento\Catalog\Model\Product\Visibility $productVisibility
@@ -55,7 +55,7 @@ class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
      */
     public function __construct(
         \Magento\Framework\Model\ResourceModel\Db\Context $context,
-        \RoyalCyber\ProductQuestions\Model\ValidationRules $validationRules,
+        \RoyalCyberMarketplace\ProductQuestions\Model\ValidationRules $validationRules,
         \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory,
         \Magento\Catalog\Model\Product\Attribute\Source\Status $productStatus,
         \Magento\Catalog\Model\Product\Visibility $productVisibility,
@@ -75,7 +75,7 @@ class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
      */
     protected function _construct()
     {
-        $this->_init('royalcyber_product_questions', 'question_id');
+        $this->_init('royalcybermarketplace_product_questions', 'question_id');
     }
 
     /**
@@ -91,7 +91,7 @@ class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
     }
 
     /**
-     * Save the question_id and store_id in the table royalcyber_product_questions_store
+     * Save the question_id and store_id in the table royalcybermarketplace_product_questions_store
      *
      * @param \Magento\Framework\Model\AbstractModel $object
      * @return $this
@@ -107,13 +107,13 @@ class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 
         if ($questionId) {
             $adapter = $this->getConnection();
-            $adapter->delete($this->getTable('royalcyber_product_questions_store'), ['question_id =?' => $questionId]);
+            $adapter->delete($this->getTable('royalcybermarketplace_product_questions_store'), ['question_id =?' => $questionId]);
             foreach ($storeIds as $storeId) {
                 $data = [
                     'question_id' => $questionId,
                     'store_view_id' => $storeId
                 ];
-                $adapter->insertMultiple($this->getTable('royalcyber_product_questions_store'), $data);
+                $adapter->insertMultiple($this->getTable('royalcybermarketplace_product_questions_store'), $data);
             }
         }
 
@@ -121,7 +121,7 @@ class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
     }
 
     /**
-     * Save the question_id and product_id in the table royalcyber_product_questions_sharing
+     * Save the question_id and product_id in the table royalcybermarketplace_product_questions_sharing
      *
      * @param int $questionId
      * @param array $productIds
@@ -131,14 +131,14 @@ class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
     {
         if ($questionId) {
             $adapter = $this->getConnection();
-            $adapter->delete($this->getTable('royalcyber_product_questions_sharing'), ['question_id =?' => $questionId]);
+            $adapter->delete($this->getTable('royalcybermarketplace_product_questions_sharing'), ['question_id =?' => $questionId]);
             foreach ($productIds as $productId) {
                 if (!empty($productId)) {
                     $data = [
                         'question_id' => $questionId,
                         'product_id' => $productId
                     ];
-                    $adapter->insertOnDuplicate($this->getTable('royalcyber_product_questions_sharing'), $data);
+                    $adapter->insertOnDuplicate($this->getTable('royalcybermarketplace_product_questions_sharing'), $data);
                 }
             }
         }
@@ -157,7 +157,7 @@ class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
         if ($questionId) {
             $question = $this->getConnection()
                 ->select()
-                ->from($this->getTable('royalcyber_product_questions'), ['product_id'])
+                ->from($this->getTable('royalcybermarketplace_product_questions'), ['product_id'])
                 ->where('question_id = :question_id');
             $productPkValue = $this->getConnection()->fetchCol($question, [':question_id' => $questionId]);
             $productId = 0;
@@ -171,7 +171,7 @@ class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
                 ->addFieldToFilter('entity_id', ['neq' => $productId])
                 ->joinField(
                     'product_id',
-                    'royalcyber_product_questions_sharing',
+                    'royalcybermarketplace_product_questions_sharing',
                     'product_id',
                     'product_id=entity_id',
                     'question_id='.$questionId,
@@ -281,7 +281,7 @@ class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
     {
         $questionStore = $this->getConnection()
             ->select()
-            ->from($this->getTable('royalcyber_product_questions_store'), ['store_view_id'])
+            ->from($this->getTable('royalcybermarketplace_product_questions_store'), ['store_view_id'])
             ->where('question_id = :question_id');
 
         $stores = $this->getConnection()->fetchCol($questionStore, [':question_id' => $object->getQuestionId()]);

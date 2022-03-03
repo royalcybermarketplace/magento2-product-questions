@@ -1,21 +1,21 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Controller\Adminhtml\Question;
+namespace RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Question;
 
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Backend\App\Action\Context;
 use Magento\Ui\Component\MassAction\Filter;
-use RoyalCyber\ProductQuestions\Model\ResourceModel\Question\CollectionFactory;
+use RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\CollectionFactory;
 
 /**
  * Class Massdelete
- * @package RoyalCyber\ProductQuestions\Controller\Adminhtml\Question
+ * @package RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Question
  */
 class Massdelete extends \Magento\Backend\App\Action implements HttpPostActionInterface
 {
@@ -24,7 +24,7 @@ class Massdelete extends \Magento\Backend\App\Action implements HttpPostActionIn
      *
      * @see _isAllowed()
      */
-    const ADMIN_RESOURCE = 'RoyalCyber_ProductQuestions::question_delete';
+    const ADMIN_RESOURCE = 'RoyalCyberMarketplace_ProductQuestions::question_delete';
 
     /**
      * @var Filter

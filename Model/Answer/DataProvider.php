@@ -1,20 +1,20 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Model\Answer;
+namespace RoyalCyberMarketplace\ProductQuestions\Model\Answer;
 
 /**
  * Class DataProvider
- * @package RoyalCyber\ProductQuestions\Model\Answer
+ * @package RoyalCyberMarketplace\ProductQuestions\Model\Answer
  */
 class DataProvider extends \Magento\Ui\DataProvider\ModifierPoolDataProvider
 {
     /**
-     * @var \RoyalCyber\ProductQuestions\Model\ResourceModel\Answer\Collection
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer\Collection
      */
     protected $collection;
 
@@ -27,7 +27,7 @@ class DataProvider extends \Magento\Ui\DataProvider\ModifierPoolDataProvider
      * @param string $name
      * @param string $primaryFieldName
      * @param string $requestFieldName
-     * @param \RoyalCyber\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory $answerCollectionFactory
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory $answerCollectionFactory
      * @param array $meta
      * @param array $data
      * @param \Magento\Ui\DataProvider\Modifier\PoolInterface|null $pool
@@ -36,7 +36,7 @@ class DataProvider extends \Magento\Ui\DataProvider\ModifierPoolDataProvider
         $name,
         $primaryFieldName,
         $requestFieldName,
-        \RoyalCyber\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory $answerCollectionFactory,
+        \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory $answerCollectionFactory,
         array $meta = [],
         array $data = [],
         \Magento\Ui\DataProvider\Modifier\PoolInterface $pool = null
@@ -56,7 +56,7 @@ class DataProvider extends \Magento\Ui\DataProvider\ModifierPoolDataProvider
             return $this->loadedData;
         }
         $items = $this->collection->getItems();
-        /** @var $answer \RoyalCyber\ProductQuestions\Model\Answer */
+        /** @var $answer \RoyalCyberMarketplace\ProductQuestions\Model\Answer */
         foreach ($items as $answer) {
             $this->loadedData[$answer->getId()] = $answer->getData();
         }

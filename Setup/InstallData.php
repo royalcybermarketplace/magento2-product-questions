@@ -1,11 +1,11 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Setup;
+namespace RoyalCyberMarketplace\ProductQuestions\Setup;
 
 use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
@@ -37,36 +37,36 @@ class InstallData implements InstallDataInterface
     {
         $installer = $setup;
 
-        //Fill table royalcyber_product_questions_status
+        //Fill table royalcybermarketplace_product_questions_status
         $questionAnswerStatuses = [
-            \RoyalCyber\ProductQuestions\Model\Status::STATUS_APPROVED => 'Approved',
-            \RoyalCyber\ProductQuestions\Model\Status::STATUS_PENDING => 'Pending',
-            \RoyalCyber\ProductQuestions\Model\Status::STATUS_NOT_APPROVED => 'Not Approved'
+            \RoyalCyberMarketplace\ProductQuestions\Model\Status::STATUS_APPROVED => 'Approved',
+            \RoyalCyberMarketplace\ProductQuestions\Model\Status::STATUS_PENDING => 'Pending',
+            \RoyalCyberMarketplace\ProductQuestions\Model\Status::STATUS_NOT_APPROVED => 'Not Approved'
         ];
         foreach ($questionAnswerStatuses as $k => $v) {
             $bind = ['status_id' => $k, 'status_code' => $v];
-            $installer->getConnection()->insertOnDuplicate($installer->getTable('royalcyber_product_questions_status'), $bind);
+            $installer->getConnection()->insertOnDuplicate($installer->getTable('royalcybermarketplace_product_questions_status'), $bind);
         }
 
-        //Fill table royalcyber_product_questions_visibility
+        //Fill table royalcybermarketplace_product_questions_visibility
         $questionAnswerStatuses = [
-            \RoyalCyber\ProductQuestions\Model\Visibility::VISIBILITY_NOT_VISIBLE => 'Not visible',
-            \RoyalCyber\ProductQuestions\Model\Visibility::VISIBILITY_VISIBLE => 'Visible'
+            \RoyalCyberMarketplace\ProductQuestions\Model\Visibility::VISIBILITY_NOT_VISIBLE => 'Not visible',
+            \RoyalCyberMarketplace\ProductQuestions\Model\Visibility::VISIBILITY_VISIBLE => 'Visible'
         ];
         foreach ($questionAnswerStatuses as $k => $v) {
             $bind = ['visibility_id' => $k, 'visibility_code' => $v];
-            $installer->getConnection()->insertOnDuplicate($installer->getTable('royalcyber_product_questions_visibility'), $bind);
+            $installer->getConnection()->insertOnDuplicate($installer->getTable('royalcybermarketplace_product_questions_visibility'), $bind);
         }
 
-        //Fill table royalcyber_product_questions_user_type
+        //Fill table royalcybermarketplace_product_questions_user_type
         $questionAnswerStatuses = [
-            \RoyalCyber\ProductQuestions\Model\UserType::USER_TYPE_GUEST => 'Guest',
-            \RoyalCyber\ProductQuestions\Model\UserType::USER_TYPE_CUSTOMER => 'Customer',
-            \RoyalCyber\ProductQuestions\Model\UserType::USER_TYPE_ADMINISTRATOR => 'Administrator'
+            \RoyalCyberMarketplace\ProductQuestions\Model\UserType::USER_TYPE_GUEST => 'Guest',
+            \RoyalCyberMarketplace\ProductQuestions\Model\UserType::USER_TYPE_CUSTOMER => 'Customer',
+            \RoyalCyberMarketplace\ProductQuestions\Model\UserType::USER_TYPE_ADMINISTRATOR => 'Administrator'
         ];
         foreach ($questionAnswerStatuses as $k => $v) {
             $bind = ['user_type_id' => $k, 'user_type_code' => $v];
-            $installer->getConnection()->insertOnDuplicate($installer->getTable('royalcyber_product_questions_user_type'), $bind);
+            $installer->getConnection()->insertOnDuplicate($installer->getTable('royalcybermarketplace_product_questions_user_type'), $bind);
         }
 
         //add the product question policies page

@@ -1,7 +1,7 @@
 /*
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
 */
 
 define([
@@ -9,7 +9,7 @@ define([
 ], function ($) {
     'use strict';
 
-    $.widget('royalcyber.processLikeDislike', {
+    $.widget('royalcybermarketplace.processLikeDislike', {
 
         /**
          *
@@ -95,5 +95,5 @@ define([
         }
     });
 
-    return $.royalcyber.processLikeDislike;
+    return $.royalcybermarketplace.processLikeDislike;
 });

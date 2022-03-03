@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
  -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="royalcyber" translate="label" sortOrder="400" class="royalcyber-tab">
-            <label>RoyalCyber</label>
+        <tab id="royalcybermarketplace" translate="label" sortOrder="400" class="royalcybermarketplace-tab">
+            <label>RoyalCyberMarketplace</label>
         </tab>
         <section id="product_questions" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="0" showInStore="0">
             <label>Catalog Product Questions</label>
-            <tab>royalcyber</tab>
-            <resource>RoyalCyber_ProductQuestions::configuration</resource>
+            <tab>royalcybermarketplace</tab>
+            <resource>RoyalCyberMarketplace_ProductQuestions::configuration</resource>
             <group id="question" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
                 <label>General Configuration</label>
                 <field id="allow_guest" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">

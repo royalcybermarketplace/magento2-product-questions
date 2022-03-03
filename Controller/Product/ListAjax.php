@@ -1,11 +1,11 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Controller\Product;
+namespace RoyalCyberMarketplace\ProductQuestions\Controller\Product;
 
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\TestFramework\Inspection\Exception;
@@ -13,7 +13,7 @@ use Magento\Framework\Controller\ResultFactory;
 
 /**
  * Class ListAjax
- * @package RoyalCyber\ProductQuestions\Controller\Product
+ * @package RoyalCyberMarketplace\ProductQuestions\Controller\Product
  */
 class ListAjax extends \Magento\Framework\App\Action\Action
 {
@@ -41,7 +41,7 @@ class ListAjax extends \Magento\Framework\App\Action\Action
     /**
      * Question Collection
      *
-     * @var \RoyalCyber\ProductQuestions\Model\ResourceModel\Question\CollectionFactory
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\CollectionFactory
      */
     protected $questionCollectionFactory;
 
@@ -56,7 +56,7 @@ class ListAjax extends \Magento\Framework\App\Action\Action
     protected $resultPageFactory;
 
     /**
-     * @var \RoyalCyber\ProductQuestions\Helper\Data
+     * @var \RoyalCyberMarketplace\ProductQuestions\Helper\Data
      */
     protected $questionData;
 
@@ -67,7 +67,7 @@ class ListAjax extends \Magento\Framework\App\Action\Action
      * @param \Magento\Framework\Registry $coreRegistry
      * @param ProductStatus $productStatus
      * @param ProductVisibility $productVisibility
-     * @param \RoyalCyber\ProductQuestions\Model\ResourceModel\Question\CollectionFactory $collectionFactory
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\CollectionFactory $collectionFactory
      * @param \Magento\Framework\Controller\Result\RawFactory $resultRawFactory
      * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
@@ -77,10 +77,10 @@ class ListAjax extends \Magento\Framework\App\Action\Action
         \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magento\Framework\Registry $coreRegistry,
-        \RoyalCyber\ProductQuestions\Model\ResourceModel\Question\CollectionFactory $collectionFactory,
+        \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\CollectionFactory $collectionFactory,
         \Magento\Framework\Controller\Result\RawFactory $resultRawFactory,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
-        \RoyalCyber\ProductQuestions\Helper\Data $questionData
+        \RoyalCyberMarketplace\ProductQuestions\Helper\Data $questionData
     ) {
         $this->productRepository = $productRepository;
         $this->storeManager = $storeManager;
@@ -125,9 +125,9 @@ class ListAjax extends \Magento\Framework\App\Action\Action
                     'main_table.product_id',
                     $productId
                 )->addStatusFilter(
-                    \RoyalCyber\ProductQuestions\Model\Status::STATUS_APPROVED
+                    \RoyalCyberMarketplace\ProductQuestions\Model\Status::STATUS_APPROVED
                 )->addVisibilityFilter(
-                    \RoyalCyber\ProductQuestions\Model\Visibility::VISIBILITY_VISIBLE
+                    \RoyalCyberMarketplace\ProductQuestions\Model\Visibility::VISIBILITY_VISIBLE
                 )->addProductIdFilter(
                     $productId
                 )->setPageSize(
@@ -136,7 +136,7 @@ class ListAjax extends \Magento\Framework\App\Action\Action
                     $pageId
                 );
 
-                $this->coreRegistry->register('royalcyber_question_product', $collection);
+                $this->coreRegistry->register('royalcybermarketplace_question_product', $collection);
             } catch (NoSuchEntityException $e) {
 
             }

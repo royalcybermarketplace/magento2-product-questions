@@ -1,10 +1,10 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  *
- * $block \RoyalCyber\ProductQuestions\Block\Product\View\ListView
+ * $block \RoyalCyberMarketplace\ProductQuestions\Block\Product\View\ListView
  */
 ?>
 <?php $questions = $block->getQuestionProductList(); ?>
@@ -89,7 +89,7 @@
                 <a href="<?php echo $questions['next_url']; ?>" id="question-load-more" previous-page="customer-questions-<?php echo $questions['current_page']; ?>">
                     <span><?php echo __('Load more'); ?></span>
                 </a>
-                <img src="<?php echo $block->getViewFileUrl('RoyalCyber_ProductQuestions::images/question-load-more.gif'); ?>" class="img-loading"/>
+                <img src="<?php echo $block->getViewFileUrl('RoyalCyberMarketplace_ProductQuestions::images/question-load-more.gif'); ?>" class="img-loading"/>
             </div>
         <?php endif; ?>
         <?php if ($questions['current_page'] == '1'): ?>

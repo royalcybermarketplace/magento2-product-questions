@@ -1,32 +1,32 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Api;
+namespace RoyalCyberMarketplace\ProductQuestions\Api;
 
 /**
  * Interface QuestionRepositoryInterface
- * @package RoyalCyber\ProductQuestions\Api
+ * @package RoyalCyberMarketplace\ProductQuestions\Api
  */
 interface QuestionRepositoryInterface
 {
     /**
      * Save Question.
      *
-     * @param \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface $question
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @param \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface $question
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      * @throws \Magento\Framework\Exception\LocalizedException
      */
-    public function save(\RoyalCyber\ProductQuestions\Api\Data\QuestionInterface $question);
+    public function save(\RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface $question);
 
     /**
      * Retrieve question.
      *
      * @param int $questionId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      * @throws \Magento\Framework\Exception\LocalizedException
      */
     public function getById($questionId);
@@ -35,7 +35,7 @@ interface QuestionRepositoryInterface
      * Retrieve questions matching the specified criteria.
      *
      * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionSearchResultsInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionSearchResultsInterface
      * @throws \Magento\Framework\Exception\LocalizedException
      */
     public function getList(\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria);
@@ -43,11 +43,11 @@ interface QuestionRepositoryInterface
     /**
      * Delete question.
      *
-     * @param \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface $question
+     * @param \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface $question
      * @return bool true on success
      * @throws \Magento\Framework\Exception\LocalizedException
      */
-    public function delete(\RoyalCyber\ProductQuestions\Api\Data\QuestionInterface $question);
+    public function delete(\RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface $question);
 
     /**
      * Delete question by ID.

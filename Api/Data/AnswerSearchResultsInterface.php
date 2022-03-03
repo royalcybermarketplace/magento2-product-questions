@@ -1,11 +1,11 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Api\Data;
+namespace RoyalCyberMarketplace\ProductQuestions\Api\Data;
 
 use Magento\Framework\Api\SearchResultsInterface;
 
@@ -19,14 +19,14 @@ interface AnswerSearchResultsInterface extends SearchResultsInterface
     /**
      * Get answers list.
      *
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface[]
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface[]
      */
     public function getItems();
 
     /**
      * Set answers list.
      *
-     * @param \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface[] $items
+     * @param \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface[] $items
      * @return $this
      */
     public function setItems(array $items);

@@ -1,11 +1,11 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Controller\Adminhtml\Question;
+namespace RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Question;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Backend\App\Action\Context;
@@ -13,7 +13,7 @@ use Magento\Framework\View\Result\PageFactory;
 
 /**
  * Class Question Index
- * @package RoyalCyber\ProductQuestions\Controller\Adminhtml\Question
+ * @package RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Question
  */
 class Index extends \Magento\Backend\App\Action implements HttpGetActionInterface
 {
@@ -22,7 +22,7 @@ class Index extends \Magento\Backend\App\Action implements HttpGetActionInterfac
      *
      * @see _isAllowed()
      */
-    const ADMIN_RESOURCE = 'RoyalCyber_ProductQuestions::question';
+    const ADMIN_RESOURCE = 'RoyalCyberMarketplace_ProductQuestions::question';
 
     /**
      * @var PageFactory

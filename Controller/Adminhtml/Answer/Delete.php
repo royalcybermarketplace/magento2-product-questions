@@ -1,17 +1,17 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Controller\Adminhtml\Answer;
+namespace RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Answer;
 
 use Magento\Framework\App\Action\HttpPostActionInterface;
 
 /**
  * Class Answer Delete
- * @package RoyalCyber\ProductQuestions\Controller\Adminhtml\Answer
+ * @package RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Answer
  */
 class Delete extends \Magento\Backend\App\Action implements HttpPostActionInterface
 {
@@ -20,7 +20,7 @@ class Delete extends \Magento\Backend\App\Action implements HttpPostActionInterf
      *
      * @see _isAllowed()
      */
-    const ADMIN_RESOURCE = 'RoyalCyber_ProductQuestions::answer_delete';
+    const ADMIN_RESOURCE = 'RoyalCyberMarketplace_ProductQuestions::answer_delete';
 
     /**
      * Delete action
@@ -38,7 +38,7 @@ class Delete extends \Magento\Backend\App\Action implements HttpPostActionInterf
             $title = "Answer id " .$id;
             try {
                 // init model and delete
-                $model = $this->_objectManager->create(\RoyalCyber\ProductQuestions\Model\Answer::class);
+                $model = $this->_objectManager->create(\RoyalCyberMarketplace\ProductQuestions\Model\Answer::class);
                 $model->load($id);
                 $model->delete();
 
@@ -46,7 +46,7 @@ class Delete extends \Magento\Backend\App\Action implements HttpPostActionInterf
                 $this->messageManager->addSuccessMessage(__('The answer has been deleted.'));
 
                 // go to grid
-                $this->_eventManager->dispatch('adminhtml_royalcyber_product_answers_on_delete', [
+                $this->_eventManager->dispatch('adminhtml_royalcybermarketplace_product_answers_on_delete', [
                     'title' => $title,
                     'status' => 'success'
                 ]);
@@ -54,7 +54,7 @@ class Delete extends \Magento\Backend\App\Action implements HttpPostActionInterf
                 return $resultRedirect->setPath('*/*/');
             } catch (\Exception $e) {
                 $this->_eventManager->dispatch(
-                    'adminhtml_royalcyber_product_answers_on_delete',
+                    'adminhtml_royalcybermarketplace_product_answers_on_delete',
                     ['title' => $title, 'status' => 'fail']
                 );
                 // display error message

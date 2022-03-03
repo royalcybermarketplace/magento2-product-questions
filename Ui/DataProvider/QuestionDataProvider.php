@@ -1,12 +1,12 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
-namespace RoyalCyber\ProductQuestions\Ui\DataProvider;
+namespace RoyalCyberMarketplace\ProductQuestions\Ui\DataProvider;
 
-use RoyalCyber\ProductQuestions\Model\ResourceModel\Question\CollectionFactory;
+use RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\CollectionFactory;
 use Magento\Framework\App\ObjectManager;
 use Magento\Ui\DataProvider\Modifier\ModifierInterface;
 use Magento\Ui\DataProvider\Modifier\PoolInterface;
@@ -22,7 +22,7 @@ class QuestionDataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
     /**
      * Question collection
      *
-     * @var \RoyalCyber\ProductQuestions\Model\ResourceModel\Question\Collection
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\Collection
      */
     protected $collection;
 

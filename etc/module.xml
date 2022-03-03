@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="RoyalCyber_ProductQuestions" setup_version="1.0.0" />
+    <module name="RoyalCyberMarketplace_ProductQuestions" setup_version="1.0.0" />
 </config>

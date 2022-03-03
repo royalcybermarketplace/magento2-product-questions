@@ -1,26 +1,26 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Model\ResourceModel;
+namespace RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel;
 
 use Magento\Framework\Model\AbstractModel;
 use Magento\Framework\Exception\LocalizedException;
-use RoyalCyber\ProductQuestions\Model\Status as AnswerStatus;
+use RoyalCyberMarketplace\ProductQuestions\Model\Status as AnswerStatus;
 
 /**
  * Class Answer
- * @package RoyalCyber\ProductQuestions\Model\ResourceModel
+ * @package RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel
  */
 class Answer extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
     /**
      * ValidationRules
      *
-     * @var \RoyalCyber\ProductQuestions\Model\ValidationRules
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\ValidationRules
      */
     protected $validationRules;
 
@@ -34,14 +34,14 @@ class Answer extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
     /**
      * Backend Auth session model
      *
-     * @var \RoyalCyber\ProductQuestions\Model\AdminUser
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\AdminUser
      */
     protected $authSession;
 
     /**
      * User Type
      *
-     * @var \RoyalCyber\ProductQuestions\Model\UserType
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\UserType
      */
     protected $userType;
 
@@ -55,27 +55,27 @@ class Answer extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
     /**
      * Question
      *
-     * @var \RoyalCyber\ProductQuestions\Model\Question
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\Question
      */
     protected $question;
 
     /**
      * @param \Magento\Framework\Model\ResourceModel\Db\Context $context
-     * @param \RoyalCyber\ProductQuestions\Model\ValidationRules $validationRules
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\ValidationRules $validationRules
      * @param \Magento\Framework\Escaper $escaper
-     * @param \RoyalCyber\ProductQuestions\Model\AdminUser $authSession
-     * @param \RoyalCyber\ProductQuestions\Model\UserType $userType
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\AdminUser $authSession
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\UserType $userType
      * @param \Magento\Customer\Model\Customer $customerModel
-     * @param \RoyalCyber\ProductQuestions\Model\Question $question
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\Question $question
      */
     public function __construct(
         \Magento\Framework\Model\ResourceModel\Db\Context $context,
-        \RoyalCyber\ProductQuestions\Model\ValidationRules $validationRules,
+        \RoyalCyberMarketplace\ProductQuestions\Model\ValidationRules $validationRules,
         \Magento\Framework\Escaper $escaper,
-        \RoyalCyber\ProductQuestions\Model\AdminUser $authSession,
-        \RoyalCyber\ProductQuestions\Model\UserType $userType,
+        \RoyalCyberMarketplace\ProductQuestions\Model\AdminUser $authSession,
+        \RoyalCyberMarketplace\ProductQuestions\Model\UserType $userType,
         \Magento\Customer\Model\Customer $customerModel,
-        \RoyalCyber\ProductQuestions\Model\Question $question
+        \RoyalCyberMarketplace\ProductQuestions\Model\Question $question
     ) {
         $this->validationRules = $validationRules;
         $this->escaper = $escaper;
@@ -92,7 +92,7 @@ class Answer extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
      */
     protected function _construct()
     {
-        $this->_init('royalcyber_product_answers', 'answer_id');
+        $this->_init('royalcybermarketplace_product_answers', 'answer_id');
     }
 
     /**
@@ -148,7 +148,7 @@ class Answer extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 
         foreach ($count as $value) {
             $adapter->update(
-                $this->getTable('royalcyber_product_questions'),
+                $this->getTable('royalcybermarketplace_product_questions'),
                 [$type => $value['count']],
                 ['question_id = ?' => (int) $object->getQuestionId()]
             );
@@ -290,7 +290,7 @@ class Answer extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
      * @param string $default
      * @return string
      */
-    public function getAdminEmail($default = 'royalcyber_ecommerce@magento.com')
+    public function getAdminEmail($default = 'royalcybermarketplace_ecommerce@magento.com')
     {
         return $this->authSession->getEmail($default);
     }
@@ -301,7 +301,7 @@ class Answer extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
      * @param string $default
      * @return string
      */
-    public function getAdminName($default = 'royalcyber')
+    public function getAdminName($default = 'royalcybermarketplace')
     {
         return $this->authSession->getName($default);
     }

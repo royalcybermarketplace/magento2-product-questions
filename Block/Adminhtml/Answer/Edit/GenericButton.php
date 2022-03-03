@@ -1,13 +1,13 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
-namespace RoyalCyber\ProductQuestions\Block\Adminhtml\Answer\Edit;
+namespace RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Answer\Edit;
 
 use Magento\Backend\Block\Widget\Context;
-use RoyalCyber\ProductQuestions\Api\AnswerRepositoryInterface;
+use RoyalCyberMarketplace\ProductQuestions\Api\AnswerRepositoryInterface;
 use Magento\Framework\Exception\NoSuchEntityException;
 
 /**

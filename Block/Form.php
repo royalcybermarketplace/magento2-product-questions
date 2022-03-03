@@ -1,16 +1,16 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Block;
+namespace RoyalCyberMarketplace\ProductQuestions\Block;
 
 class Form extends \Magento\Framework\View\Element\Template
 {
     /**
-     * @var \RoyalCyber\ProductQuestions\Helper\Data
+     * @var \RoyalCyberMarketplace\ProductQuestions\Helper\Data
      */
     protected $questionData;
 
@@ -21,14 +21,14 @@ class Form extends \Magento\Framework\View\Element\Template
 
     /**
      * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \RoyalCyber\ProductQuestions\Helper\Data $questionData
+     * @param \RoyalCyberMarketplace\ProductQuestions\Helper\Data $questionData
      * @param \Magento\Customer\Model\Url $customerUrl
      * @param array $data
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
-        \RoyalCyber\ProductQuestions\Helper\Data $questionData,
+        \RoyalCyberMarketplace\ProductQuestions\Helper\Data $questionData,
         \Magento\Customer\Model\Url $customerUrl,
         array $data = []
     ) {

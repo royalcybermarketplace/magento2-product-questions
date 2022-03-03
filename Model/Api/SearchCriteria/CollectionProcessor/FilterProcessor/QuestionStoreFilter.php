@@ -1,11 +1,11 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor;
+namespace RoyalCyberMarketplace\ProductQuestions\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor;
 
 use Magento\Framework\Api\Filter;
 use Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor\CustomFilterInterface;
@@ -13,7 +13,7 @@ use Magento\Framework\Data\Collection\AbstractDb;
 
 /**
  * Class QuestionStoreFilter
- * @package RoyalCyber\ProductQuestions\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor
+ * @package RoyalCyberMarketplace\ProductQuestions\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor
  */
 class QuestionStoreFilter implements CustomFilterInterface
 {
@@ -26,7 +26,7 @@ class QuestionStoreFilter implements CustomFilterInterface
      */
     public function apply(Filter $filter, AbstractDb $collection)
     {
-        /** @var \RoyalCyber\ProductQuestions\Model\ResourceModel\Question\Collection $collection */
+        /** @var \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\Collection $collection */
         $collection->addStoreFilter($filter->getValue());
 
         return true;

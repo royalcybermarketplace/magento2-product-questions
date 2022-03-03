@@ -1,15 +1,15 @@
 <?xml version="1.0" ?>
 <!--
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
  -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
 	<router id="admin">
 		<route frontName="product_questions" id="product_questions">
-			<module name="RoyalCyber_ProductQuestions" before="Magento_Backend"/>
+			<module name="RoyalCyberMarketplace_ProductQuestions" before="Magento_Backend"/>
 		</route>
 	</router>
 </config>

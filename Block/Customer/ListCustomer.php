@@ -1,11 +1,11 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Block\Customer;
+namespace RoyalCyberMarketplace\ProductQuestions\Block\Customer;
 
 use Magento\Customer\Api\AccountManagementInterface;
 use Magento\Customer\Api\CustomerRepositoryInterface;
@@ -18,14 +18,14 @@ class ListCustomer extends \Magento\Customer\Block\Account\Dashboard
     /**
      * Product questions collection
      *
-     * @var \RoyalCyber\ProductQuestions\Model\ResourceModel\Question\Collection
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\Collection
      */
     protected $collection;
 
     /**
      * Question resource model
      *
-     * @var \RoyalCyber\ProductQuestions\Model\ResourceModel\Question\CollectionFactory
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\CollectionFactory
      */
     protected $questionColFactory;
 
@@ -35,17 +35,17 @@ class ListCustomer extends \Magento\Customer\Block\Account\Dashboard
     protected $currentCustomer;
 
     /**
-     * @var \RoyalCyber\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory
      */
     protected $answerColFactory;
 
     /**
-     * @var \RoyalCyber\ProductQuestions\Model\Config\Source\FormatDateTime
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\Config\Source\FormatDateTime
      */
     protected $formatDateTime;
 
     /**
-     * @var \RoyalCyber\ProductQuestions\Model\UserType
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\UserType
      */
     protected $userType;
 
@@ -60,11 +60,11 @@ class ListCustomer extends \Magento\Customer\Block\Account\Dashboard
      * @param \Magento\Newsletter\Model\SubscriberFactory $subscriberFactory
      * @param CustomerRepositoryInterface $customerRepository
      * @param AccountManagementInterface $customerAccountManagement
-     * @param \RoyalCyber\ProductQuestions\Model\ResourceModel\Question\CollectionFactory $collectionFactory
-     * @param \RoyalCyber\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory $answerColFactory
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\CollectionFactory $collectionFactory
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory $answerColFactory
      * @param \Magento\Customer\Helper\Session\CurrentCustomer $currentCustomer
-     * @param \RoyalCyber\ProductQuestions\Model\Config\Source\FormatDateTime $formatDateTime
-     * @param \RoyalCyber\ProductQuestions\Model\UserType $userType
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\Config\Source\FormatDateTime $formatDateTime
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\UserType $userType
      * @param \Magento\Framework\DataObjectFactory $dataObjectFactory
      * @param array $data
      */
@@ -74,11 +74,11 @@ class ListCustomer extends \Magento\Customer\Block\Account\Dashboard
         \Magento\Newsletter\Model\SubscriberFactory $subscriberFactory,
         CustomerRepositoryInterface $customerRepository,
         AccountManagementInterface $customerAccountManagement,
-        \RoyalCyber\ProductQuestions\Model\ResourceModel\Question\CollectionFactory $collectionFactory,
-        \RoyalCyber\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory $answerColFactory,
+        \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\CollectionFactory $collectionFactory,
+        \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory $answerColFactory,
         \Magento\Customer\Helper\Session\CurrentCustomer $currentCustomer,
-        \RoyalCyber\ProductQuestions\Model\Config\Source\FormatDateTime $formatDateTime,
-        \RoyalCyber\ProductQuestions\Model\UserType $userType,
+        \RoyalCyberMarketplace\ProductQuestions\Model\Config\Source\FormatDateTime $formatDateTime,
+        \RoyalCyberMarketplace\ProductQuestions\Model\UserType $userType,
         \Magento\Framework\DataObjectFactory $dataObjectFactory,
         array $data = []
     ) {
@@ -131,7 +131,7 @@ class ListCustomer extends \Magento\Customer\Block\Account\Dashboard
     /**
      * Get reviews
      *
-     * @return bool|\RoyalCyber\ProductQuestions\Model\ResourceModel\Question\Collection
+     * @return bool|\RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\Collection
      */
     public function getQuestions()
     {
@@ -183,9 +183,9 @@ class ListCustomer extends \Magento\Customer\Block\Account\Dashboard
             'main_table.question_id',
             (int) $questionId
         )->addStatusFilter(
-            \RoyalCyber\ProductQuestions\Model\Status::STATUS_APPROVED
+            \RoyalCyberMarketplace\ProductQuestions\Model\Status::STATUS_APPROVED
         )->addVisibilityFilter(
-            \RoyalCyber\ProductQuestions\Model\Visibility::VISIBILITY_VISIBLE
+            \RoyalCyberMarketplace\ProductQuestions\Model\Visibility::VISIBILITY_VISIBLE
         );
 
         $answers = [];
@@ -199,7 +199,7 @@ class ListCustomer extends \Magento\Customer\Block\Account\Dashboard
     /**
      * Retrieve the answer information
      *
-     * @param \RoyalCyber\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory $answer
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory $answer
      * @return array
      */
     protected function getAnswerInfo($answer)

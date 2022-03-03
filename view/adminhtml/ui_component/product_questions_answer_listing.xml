@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
  -->
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
@@ -32,8 +32,8 @@
             </storageConfig>
             <updateUrl path="mui/index/render"/>
         </settings>
-        <aclResource>RoyalCyber_ProductQuestions::answer</aclResource>
-        <dataProvider class="RoyalCyber\ProductQuestions\Ui\DataProvider\AnswerDataProvider" name="product_questions_answer_listing_data_source">
+        <aclResource>RoyalCyberMarketplace_ProductQuestions::answer</aclResource>
+        <dataProvider class="RoyalCyberMarketplace\ProductQuestions\Ui\DataProvider\AnswerDataProvider" name="product_questions_answer_listing_data_source">
             <settings>
                 <requestFieldName>answer_id</requestFieldName>
                 <primaryFieldName>answer_id</primaryFieldName>
@@ -106,7 +106,7 @@
                 <sorting>asc</sorting>
             </settings>
         </column>
-        <actionsColumn name="question_id" class="RoyalCyber\ProductQuestions\Ui\Component\Listing\Column\Question">
+        <actionsColumn name="question_id" class="RoyalCyberMarketplace\ProductQuestions\Ui\Component\Listing\Column\Question">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>
@@ -155,7 +155,7 @@
             </settings>
         </column>
 
-        <column name="answer_status_id" sortOrder="50" class="RoyalCyber\ProductQuestions\Ui\Component\Listing\Column\IsActive">
+        <column name="answer_status_id" sortOrder="50" class="RoyalCyberMarketplace\ProductQuestions\Ui\Component\Listing\Column\IsActive">
             <settings>
                 <filter>text</filter>
                 <label translate="true">Status</label>
@@ -170,7 +170,7 @@
             </settings>
         </column>
 
-        <actionsColumn name="actions" sortOrder="70" class="RoyalCyber\ProductQuestions\Ui\Component\Listing\Column\AnswerActions">
+        <actionsColumn name="actions" sortOrder="70" class="RoyalCyberMarketplace\ProductQuestions\Ui\Component\Listing\Column\AnswerActions">
             <settings>
                 <indexField>answer_id</indexField>
                 <resizeEnabled>false</resizeEnabled>

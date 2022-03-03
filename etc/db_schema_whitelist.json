@@ -1,5 +1,5 @@
 {
-    "royalcyber_product_questions_sharing": {
+    "royalcybermarketplace_product_questions_sharing": {
         "column": {
             "product_id": true,
             "question_id": true
@@ -9,7 +9,7 @@
             "FK_F045E2E1777847CAB2D2DB8D4C3D9B31": true
         }
     },
-    "royalcyber_product_questions_status": {
+    "royalcybermarketplace_product_questions_status": {
         "column": {
             "status_id": true,
             "status_code": true
@@ -18,7 +18,7 @@
             "PRIMARY": true
         }
     },
-    "royalcyber_product_questions_store": {
+    "royalcybermarketplace_product_questions_store": {
         "column": {
             "store_view_id": true,
             "question_id": true
@@ -28,7 +28,7 @@
             "FK_228D7FE042B5318263EE6F8A6DC076A8": true
         }
     },
-    "royalcyber_product_questions_user_type": {
+    "royalcybermarketplace_product_questions_user_type": {
         "column": {
             "user_type_id": true,
             "user_type_code": true
@@ -37,7 +37,7 @@
             "PRIMARY": true
         }
     },
-    "royalcyber_product_questions_visibility": {
+    "royalcybermarketplace_product_questions_visibility": {
         "column": {
             "visibility_id": true,
             "visibility_code": true
@@ -46,7 +46,7 @@
             "PRIMARY": true
         }
     },
-    "royalcyber_product_answers": {
+    "royalcybermarketplace_product_answers": {
         "column": {
             "answer_id": true,
             "answer_detail": true,
@@ -74,7 +74,7 @@
             "FK_AC9C6BB66013FB1603914C3473771B4F": true
         }
     },
-    "royalcyber_product_questions": {
+    "royalcybermarketplace_product_questions": {
         "column": {
             "question_id": true,
             "question_detail": true,

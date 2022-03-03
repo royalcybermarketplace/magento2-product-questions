@@ -1,8 +1,8 @@
 {
     "name": "royalcybermarketplace/magento2-product-questions",
-    "description":"RoyalCyber Product Questions",
+    "description":"RoyalCyberMarketplace Product Questions",
     "keywords": [
-        "royalcyber",
+        "royalcybermarketplace",
         "product questions",
         "questions and answers",
         "question product",
@@ -16,7 +16,7 @@
     ],
     "authors": [
         {
-            "name": "RoyalCyber",
+            "name": "Royal Cyber",
             "email": "saif.ali@royalcyber.com",
             "role": "Magento 2 Solution Provider"
         }
@@ -26,7 +26,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "RoyalCyber\\ProductQuestions\\": ""
+            "RoyalCyberMarketplace\\ProductQuestions\\": ""
         }
     }
 }

@@ -1,14 +1,14 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Model\Answer\Source;
+namespace RoyalCyberMarketplace\ProductQuestions\Model\Answer\Source;
 
 use Magento\Framework\Data\OptionSourceInterface;
-use RoyalCyber\ProductQuestions\Model\ResourceModel\Question\CollectionFactory as QuestionCollection;
+use RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\CollectionFactory as QuestionCollection;
 
 class Question implements OptionSourceInterface
 {

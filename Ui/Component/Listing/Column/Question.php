@@ -1,21 +1,21 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Ui\Component\Listing\Column;
+namespace RoyalCyberMarketplace\ProductQuestions\Ui\Component\Listing\Column;
 
 use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Ui\Component\Listing\Columns\Column;
 use Magento\Framework\UrlInterface;
-use RoyalCyber\ProductQuestions\Api\QuestionRepositoryInterface;
+use RoyalCyberMarketplace\ProductQuestions\Api\QuestionRepositoryInterface;
 
 /**
  * Class Question
- * @package RoyalCyber\ProductQuestions\Ui\Component\Listing\Column
+ * @package RoyalCyberMarketplace\ProductQuestions\Ui\Component\Listing\Column
  */
 class Question extends Column
 {

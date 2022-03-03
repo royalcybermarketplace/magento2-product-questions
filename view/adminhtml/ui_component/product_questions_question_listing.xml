@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
  -->
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
@@ -32,8 +32,8 @@
             </storageConfig>
             <updateUrl path="mui/index/render"/>
         </settings>
-        <aclResource>RoyalCyber_ProductQuestions::question</aclResource>
-        <dataProvider class="RoyalCyber\ProductQuestions\Ui\DataProvider\QuestionDataProvider" name="product_questions_question_listing_data_source">
+        <aclResource>RoyalCyberMarketplace_ProductQuestions::question</aclResource>
+        <dataProvider class="RoyalCyberMarketplace\ProductQuestions\Ui\DataProvider\QuestionDataProvider" name="product_questions_question_listing_data_source">
             <settings>
                 <requestFieldName>question_id</requestFieldName>
                 <primaryFieldName>question_id</primaryFieldName>
@@ -145,21 +145,21 @@
             </settings>
         </column>
 
-        <column name="question_status_id" sortOrder="40" class="RoyalCyber\ProductQuestions\Ui\Component\Listing\Column\IsActive">
+        <column name="question_status_id" sortOrder="40" class="RoyalCyberMarketplace\ProductQuestions\Ui\Component\Listing\Column\IsActive">
             <settings>
                 <filter>text</filter>
                 <label translate="true">Status</label>
             </settings>
         </column>
 
-        <column name="customer_id" sortOrder="50" class="RoyalCyber\ProductQuestions\Ui\Component\Listing\Column\Customer">
+        <column name="customer_id" sortOrder="50" class="RoyalCyberMarketplace\ProductQuestions\Ui\Component\Listing\Column\Customer">
             <settings>
                 <filter>text</filter>
                 <label translate="true">Customer</label>
             </settings>
         </column>
 
-        <column name="product_id" sortOrder="60" class="RoyalCyber\ProductQuestions\Ui\Component\Listing\Column\Product">
+        <column name="product_id" sortOrder="60" class="RoyalCyberMarketplace\ProductQuestions\Ui\Component\Listing\Column\Product">
             <settings>
                 <filter>text</filter>
                 <label translate="true">Product</label>
@@ -174,7 +174,7 @@
             </settings>
         </column>
 
-        <actionsColumn name="actions" sortOrder="80" class="RoyalCyber\ProductQuestions\Ui\Component\Listing\Column\QuestionActions">
+        <actionsColumn name="actions" sortOrder="80" class="RoyalCyberMarketplace\ProductQuestions\Ui\Component\Listing\Column\QuestionActions">
             <settings>
                 <indexField>question_id</indexField>
                 <resizeEnabled>false</resizeEnabled>

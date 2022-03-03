@@ -1,16 +1,16 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Controller\Adminhtml\Answer;
+namespace RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Answer;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
 
 /**
- * Create RoyalCyber product answer new action.
+ * Create RoyalCyberMarketplace product answer new action.
  */
 class NewAction extends \Magento\Backend\App\Action implements HttpGetActionInterface
 {
@@ -19,7 +19,7 @@ class NewAction extends \Magento\Backend\App\Action implements HttpGetActionInte
      *
      * @see _isAllowed()
      */
-    const ADMIN_RESOURCE = 'RoyalCyber_ProductQuestions::answer_save';
+    const ADMIN_RESOURCE = 'RoyalCyberMarketplace_ProductQuestions::answer_save';
 
     /**
      * @var \Magento\Backend\Model\View\Result\Forward

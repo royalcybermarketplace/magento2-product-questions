@@ -1,17 +1,17 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
-namespace RoyalCyber\ProductQuestions\Block\Adminhtml\Answer\Edit;
+namespace RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Answer\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 use Magento\Ui\Component\Control\Container;
 
 /**
  * Class SaveButton
- * @package RoyalCyber\ProductQuestions\Block\Adminhtml\Answer\Edit
+ * @package RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Answer\Edit
  */
 class SaveButton extends GenericButton implements ButtonProviderInterface
 {

@@ -1,15 +1,15 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Model;
+namespace RoyalCyberMarketplace\ProductQuestions\Model;
 
 /**
  * Class AdminUser
- * @package RoyalCyber\ProductQuestions\Model
+ * @package RoyalCyberMarketplace\ProductQuestions\Model
  */
 class AdminUser
 {
@@ -35,7 +35,7 @@ class AdminUser
      * @param string $default
      * @return string
      */
-    public function getEmail($default = 'royalcyber_ecommerce@magento.com')
+    public function getEmail($default = 'royalcybermarketplace_ecommerce@magento.com')
     {
         if ($this->authSession->isLoggedIn()) {
             return $this->authSession->getUser()->getEmail();
@@ -50,13 +50,13 @@ class AdminUser
      * @param string $default
      * @return string
      */
-    public function getName($default = 'royalcyber')
+    public function getName($default = 'royalcybermarketplace')
     {
         if ($this->authSession->isLoggedIn()) {
             return $this->authSession->getUser()->getFirstname();
         }
 
-        return 'royalcyber';
+        return 'royalcybermarketplace';
     }
 
     /**

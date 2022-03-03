@@ -1,18 +1,18 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Model;
+namespace RoyalCyberMarketplace\ProductQuestions\Model;
 
 use Magento\Framework\Model\AbstractModel;
-use RoyalCyber\ProductQuestions\Api\Data\AnswerInterface;
+use RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface;
 
 /**
  * Class Answer
- * @package RoyalCyber\ProductQuestions\Model
+ * @package RoyalCyberMarketplace\ProductQuestions\Model
  */
 class Answer extends AbstractModel implements AnswerInterface
 {
@@ -21,7 +21,7 @@ class Answer extends AbstractModel implements AnswerInterface
      *
      * @var string
      */
-    const CACHE_TAG = 'royalcyber_product_answer';
+    const CACHE_TAG = 'royalcybermarketplace_product_answer';
 
     /**
      * Initialize resource model
@@ -30,7 +30,7 @@ class Answer extends AbstractModel implements AnswerInterface
      */
     protected function _construct()
     {
-        $this->_init(\RoyalCyber\ProductQuestions\Model\ResourceModel\Answer::class);
+        $this->_init(\RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer::class);
     }
 
     /**
@@ -81,7 +81,7 @@ class Answer extends AbstractModel implements AnswerInterface
      */
     public function getAdministratorCode()
     {
-        return \RoyalCyber\ProductQuestions\Model\UserType::USER_TYPE_ADMINISTRATOR;
+        return \RoyalCyberMarketplace\ProductQuestions\Model\UserType::USER_TYPE_ADMINISTRATOR;
     }
 
     /**
@@ -218,7 +218,7 @@ class Answer extends AbstractModel implements AnswerInterface
      * Set ID
      *
      * @param int $id
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setId($id)
     {
@@ -229,7 +229,7 @@ class Answer extends AbstractModel implements AnswerInterface
      * Set answer detail
      *
      * @param string $answerDetail
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerDetail($answerDetail)
     {
@@ -240,7 +240,7 @@ class Answer extends AbstractModel implements AnswerInterface
      * Set answer author name
      *
      * @param string $answerAuthorName
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerAuthorName($answerAuthorName)
     {
@@ -251,7 +251,7 @@ class Answer extends AbstractModel implements AnswerInterface
      * Set answer author email
      *
      * @param string $answerAuthorEmail
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerAuthorEmail($answerAuthorEmail)
     {
@@ -262,7 +262,7 @@ class Answer extends AbstractModel implements AnswerInterface
      * Set question Id
      *
      * @param int $questionId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setQuestionId($questionId)
     {
@@ -273,7 +273,7 @@ class Answer extends AbstractModel implements AnswerInterface
      * Set answer status id
      *
      * @param int $answerStatusId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerStatusId($answerStatusId)
     {
@@ -284,7 +284,7 @@ class Answer extends AbstractModel implements AnswerInterface
      * Set answer user type id
      *
      * @param int $answerUserTypeId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerUserTypeId($answerUserTypeId)
     {
@@ -295,7 +295,7 @@ class Answer extends AbstractModel implements AnswerInterface
      * Set answer user id
      *
      * @param int $answerUserId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerUserId($answerUserId)
     {
@@ -306,7 +306,7 @@ class Answer extends AbstractModel implements AnswerInterface
      * Set answer created by
      *
      * @param int $answerCreatedBy
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerCreatedBy($answerCreatedBy)
     {
@@ -317,7 +317,7 @@ class Answer extends AbstractModel implements AnswerInterface
      * Set answer visibility id
      *
      * @param int $answerVisibilityId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerVisibilityId($answerVisibilityId)
     {
@@ -328,7 +328,7 @@ class Answer extends AbstractModel implements AnswerInterface
      * Set answer likes
      *
      * @param int $answerLikes
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerLikes($answerLikes)
     {
@@ -339,7 +339,7 @@ class Answer extends AbstractModel implements AnswerInterface
      * Set answer dislikes
      *
      * @param int $answerDislikes
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerDislikes($answerDislikes)
     {
@@ -350,7 +350,7 @@ class Answer extends AbstractModel implements AnswerInterface
      * Set answer created at
      *
      * @param int $answerCreatedAt
-     * @return \RoyalCyber\ProductQuestions\Api\Data\AnswerInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface
      */
     public function setAnswerCreatedAt($answerCreatedAt)
     {

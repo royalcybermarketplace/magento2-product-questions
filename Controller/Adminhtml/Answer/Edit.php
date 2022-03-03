@@ -1,18 +1,18 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Controller\Adminhtml\Answer;
+namespace RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Answer;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Backend\App\Action;
 
 /**
  * Class Edit
- * @package RoyalCyber\ProductQuestions\Controller\Adminhtml\Answer
+ * @package RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Answer
  */
 class Edit extends Action implements HttpGetActionInterface
 {
@@ -22,7 +22,7 @@ class Edit extends Action implements HttpGetActionInterface
      *
      * @see _isAllowed()
      */
-    const ADMIN_RESOURCE = 'RoyalCyber_ProductQuestions::answer_save';
+    const ADMIN_RESOURCE = 'RoyalCyberMarketplace_ProductQuestions::answer_save';
 
     /**
      * Core registry
@@ -77,7 +77,7 @@ class Edit extends Action implements HttpGetActionInterface
     {
         // 1. Get ID and create model
         $id = $this->getRequest()->getParam('answer_id');
-        $model = $this->_objectManager->create(\RoyalCyber\ProductQuestions\Model\Answer::class);
+        $model = $this->_objectManager->create(\RoyalCyberMarketplace\ProductQuestions\Model\Answer::class);
 
         // 2. Initial checking
         if ($id) {
@@ -90,7 +90,7 @@ class Edit extends Action implements HttpGetActionInterface
             }
         }
 
-        $this->_coreRegistry->register('royalcyber_product_answers', $model);
+        $this->_coreRegistry->register('royalcybermarketplace_product_answers', $model);
 
         // 5. Build edit form
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */

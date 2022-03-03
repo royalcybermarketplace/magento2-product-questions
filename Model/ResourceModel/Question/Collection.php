@@ -1,15 +1,15 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Model\ResourceModel\Question;
+namespace RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question;
 
 /**
  * Class Collection
- * @package RoyalCyber\ProductQuestions\Model\ResourceModel\Question
+ * @package RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question
  */
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
@@ -23,7 +23,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
      *
      * @var string
      */
-    protected $_eventPrefix = 'royalcyber_product_questions_collection';
+    protected $_eventPrefix = 'royalcybermarketplace_product_questions_collection';
 
     /**
      * Event object
@@ -38,8 +38,8 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
     protected function _construct()
     {
         $this->_init(
-            \RoyalCyber\ProductQuestions\Model\Question::class,
-            \RoyalCyber\ProductQuestions\Model\ResourceModel\Question::class
+            \RoyalCyberMarketplace\ProductQuestions\Model\Question::class,
+            \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question::class
         );
     }
 
@@ -66,7 +66,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
     {
         $connection = $this->getConnection();
         $select = $connection->select()->from(
-            $this->getTable('royalcyber_product_questions_store')
+            $this->getTable('royalcybermarketplace_product_questions_store')
         )
         ->where('question_id =?', $questionId)
         ->group('store_view_id');
@@ -90,7 +90,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
     {
         $inCond = $this->getConnection()->prepareSqlCondition('store.store_view_id', ['in' => $storeId]);
         $this->getSelect()->join(
-            ['store' => $this->getTable('royalcyber_product_questions_store')],
+            ['store' => $this->getTable('royalcybermarketplace_product_questions_store')],
             'main_table.question_id=store.question_id',
             ['store.store_view_id']
         );
@@ -131,7 +131,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
     public function addProductIdFilter($productId)
     {
         $this->getSelect()->joinLeft(
-            ['shared' => $this->getTable('royalcyber_product_questions_sharing')],
+            ['shared' => $this->getTable('royalcybermarketplace_product_questions_sharing')],
             'main_table.question_id = shared.question_id',
             ['product_id']
         )->orWhere(

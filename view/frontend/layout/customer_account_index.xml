@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
  -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block class="RoyalCyber\ProductQuestions\Block\Customer\Recent" name="customer_account_dashboard_info2" template="customer/recent.phtml" after="customer_account_dashboard_address" cacheable="false"/>
+            <block class="RoyalCyberMarketplace\ProductQuestions\Block\Customer\Recent" name="customer_account_dashboard_info2" template="customer/recent.phtml" after="customer_account_dashboard_address" cacheable="false"/>
         </referenceContainer>
     </body>
 </page>

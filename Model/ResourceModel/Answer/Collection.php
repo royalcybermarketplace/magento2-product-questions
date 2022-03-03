@@ -1,15 +1,15 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Model\ResourceModel\Answer;
+namespace RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer;
 
 /**
  * Class Collection
- * @package RoyalCyber\ProductQuestions\Model\ResourceModel\Answer
+ * @package RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer
  */
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
@@ -23,7 +23,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
      *
      * @var string
      */
-    protected $_eventPrefix = 'royalcyber_product_answer_collection';
+    protected $_eventPrefix = 'royalcybermarketplace_product_answer_collection';
 
     /**
      * Event object
@@ -38,8 +38,8 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
     protected function _construct()
     {
         $this->_init(
-            \RoyalCyber\ProductQuestions\Model\Answer::class,
-            \RoyalCyber\ProductQuestions\Model\ResourceModel\Answer::class
+            \RoyalCyberMarketplace\ProductQuestions\Model\Answer::class,
+            \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer::class
         );
     }
 

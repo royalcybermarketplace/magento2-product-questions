@@ -1,17 +1,17 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Controller\Adminhtml\Question;
+namespace RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Question;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\Controller\ResultFactory;
 
 /**
- * Create RoyalCyber product question new action.
+ * Create RoyalCyberMarketplace product question new action.
  */
 class NewAction extends \Magento\Backend\App\Action implements HttpGetActionInterface
 {
@@ -20,7 +20,7 @@ class NewAction extends \Magento\Backend\App\Action implements HttpGetActionInte
      *
      * @see _isAllowed()
      */
-    const ADMIN_RESOURCE = 'RoyalCyber_ProductQuestions::question_save';
+    const ADMIN_RESOURCE = 'RoyalCyberMarketplace_ProductQuestions::question_save';
 
     /**
      * @return \Magento\Backend\Model\View\Result\Page
@@ -32,9 +32,9 @@ class NewAction extends \Magento\Backend\App\Action implements HttpGetActionInte
         $resultPage->setActiveMenu('Magento_Backend::marketing');
         $resultPage->getConfig()->getTitle()->prepend(__('Product Questions'));
         $resultPage->getConfig()->getTitle()->prepend(__('New Question'));
-        $resultPage->addContent($resultPage->getLayout()->createBlock(\RoyalCyber\ProductQuestions\Block\Adminhtml\Add::class));
+        $resultPage->addContent($resultPage->getLayout()->createBlock(\RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Add::class));
         $resultPage->addContent($resultPage->getLayout()->createBlock(
-            \RoyalCyber\ProductQuestions\Block\Adminhtml\Product\Grid::class
+            \RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Product\Grid::class
         ));
         return $resultPage;
     }

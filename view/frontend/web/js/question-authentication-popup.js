@@ -1,7 +1,7 @@
 /*
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
 */
 
 define([
@@ -14,7 +14,7 @@ define([
 ], function ($, modal, customerData) {
     'use strict';
 
-    $.widget('royalcyber.questionAuthenticationPopup', {
+    $.widget('royalcybermarketplace.questionAuthenticationPopup', {
 
         /**
          *
@@ -43,8 +43,8 @@ define([
                             self.element.find('form').find('#detail').remove();
                             self.element.find('form').find('#reply-on-type').remove();
                             self.element.find('form').find('#commentId').remove();
-                            self.element.find('form').find('#author_name').val($.cookie('royalcyber.question_author_name'));
-                            self.element.find('form').find('#author_email').val($.cookie('royalcyber.question_author_email'));
+                            self.element.find('form').find('#author_name').val($.cookie('royalcybermarketplace.question_author_name'));
+                            self.element.find('form').find('#author_email').val($.cookie('royalcybermarketplace.question_author_email'));
                             self.element.find('form').find('#commentId').remove();
                             if (form.parents('ul.parent').length > 0) {
                                 button.text(self.options.titleButtonAnswer);
@@ -90,11 +90,11 @@ define([
         },
 
         _saveAuthorNameCookie: function(value) {
-            $.cookie('royalcyber.question_author_name', value, {expires: this._getCookieExpiryTime()});
+            $.cookie('royalcybermarketplace.question_author_name', value, {expires: this._getCookieExpiryTime()});
         },
 
         _saveAuthorEmailCookie: function(value) {
-            $.cookie('royalcyber.question_author_email', value, {expires: this._getCookieExpiryTime()});
+            $.cookie('royalcybermarketplace.question_author_email', value, {expires: this._getCookieExpiryTime()});
         },
 
         _getCookieExpiryTime: function() {
@@ -170,5 +170,5 @@ define([
         }
     });
 
-    return $.royalcyber.questionAuthenticationPopup;
+    return $.royalcybermarketplace.questionAuthenticationPopup;
 });

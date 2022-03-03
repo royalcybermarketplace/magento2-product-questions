@@ -1,15 +1,15 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Model;
+namespace RoyalCyberMarketplace\ProductQuestions\Model;
 
 /**
  * Class Product
- * @package RoyalCyber\ProductQuestions\Model
+ * @package RoyalCyberMarketplace\ProductQuestions\Model
  */
 class Product
 {

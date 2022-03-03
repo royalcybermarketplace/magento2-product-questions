@@ -1,12 +1,12 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  *
 
 // @codingStandardsIgnoreFile
-/** @var \RoyalCyber\ProductQuestions\Block\Customer\ListCustomer $block */
+/** @var \RoyalCyberMarketplace\ProductQuestions\Block\Customer\ListCustomer $block */
 ?>
 <?php if ($block->getQuestions() && count($block->getQuestions())): ?>
     <div class="table-wrapper questions">
@@ -73,7 +73,7 @@
                         <?php endif; ?>
                     </td>
                     <td data-th="<?php echo $block->escapeHtml(__('Status')) ?>" class="col actions">
-                        <?php echo $this->helper('RoyalCyber\ProductQuestions\Helper\Data')->getStatusText($question->getQuestionStatusId()); ?>
+                        <?php echo $this->helper('RoyalCyberMarketplace\ProductQuestions\Helper\Data')->getStatusText($question->getQuestionStatusId()); ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
@@ -89,9 +89,9 @@
     <script type="text/x-magento-init">
         {
             "#likes-dislikes": {
-                "RoyalCyber_ProductQuestions/js/process-like-dislike": {
+                "RoyalCyberMarketplace_ProductQuestions/js/process-like-dislike": {
                     "likeDislikeUrl": "<?php /* @escapeNotVerified */ echo $block->getLikeDislikeUrl();?>",
-                    "loadingNumberImage": "<?php echo $block->getViewFileUrl('RoyalCyber_ProductQuestions::images/loading-number.gif'); ?>"
+                    "loadingNumberImage": "<?php echo $block->getViewFileUrl('RoyalCyberMarketplace_ProductQuestions::images/loading-number.gif'); ?>"
                 }
             }
         }

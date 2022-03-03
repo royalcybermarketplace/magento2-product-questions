@@ -1,11 +1,11 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Block\Product\View;
+namespace RoyalCyberMarketplace\ProductQuestions\Block\Product\View;
 
 class ListView extends \Magento\Framework\View\Element\Template
 {
@@ -22,22 +22,22 @@ class ListView extends \Magento\Framework\View\Element\Template
     protected $dataObjectFactory;
 
     /**
-     * @var \RoyalCyber\ProductQuestions\Model\UserType
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\UserType
      */
     protected $userType;
 
     /**
-     * @var \RoyalCyber\ProductQuestions\Model\Config\Source\FormatDateTime
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\Config\Source\FormatDateTime
      */
     protected $formatDateTime;
 
     /**
-     * @var \RoyalCyber\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory
      */
     protected $answerColFactory;
 
     /**
-     * @var \RoyalCyber\ProductQuestions\Helper\Data
+     * @var \RoyalCyberMarketplace\ProductQuestions\Helper\Data
      */
     protected $questionData;
 
@@ -45,20 +45,20 @@ class ListView extends \Magento\Framework\View\Element\Template
      * @param \Magento\Framework\View\Element\Template\Context $context
      * @param \Magento\Framework\Registry $coreRegistry
      * @param \Magento\Framework\DataObjectFactory $dataObjectFactory
-     * @param \RoyalCyber\ProductQuestions\Model\UserType $userType
-     * @param \RoyalCyber\ProductQuestions\Model\Config\Source\FormatDateTime $formatDateTime
-     * @param \RoyalCyber\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory $answerColFactory
-     * @param \RoyalCyber\ProductQuestions\Helper\Data $questionData
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\UserType $userType
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\Config\Source\FormatDateTime $formatDateTime
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory $answerColFactory
+     * @param \RoyalCyberMarketplace\ProductQuestions\Helper\Data $questionData
      * @param array $data
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Magento\Framework\Registry $coreRegistry,
         \Magento\Framework\DataObjectFactory $dataObjectFactory,
-        \RoyalCyber\ProductQuestions\Model\UserType $userType,
-        \RoyalCyber\ProductQuestions\Model\Config\Source\FormatDateTime $formatDateTime,
-        \RoyalCyber\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory $answerColFactory,
-        \RoyalCyber\ProductQuestions\Helper\Data $questionData,
+        \RoyalCyberMarketplace\ProductQuestions\Model\UserType $userType,
+        \RoyalCyberMarketplace\ProductQuestions\Model\Config\Source\FormatDateTime $formatDateTime,
+        \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory $answerColFactory,
+        \RoyalCyberMarketplace\ProductQuestions\Helper\Data $questionData,
         array $data = []
     ) {
         $this->coreRegistry = $coreRegistry;
@@ -77,7 +77,7 @@ class ListView extends \Magento\Framework\View\Element\Template
      */
     public function getQuestionProductList()
     {
-        $questions = $this->coreRegistry->registry('royalcyber_question_product');
+        $questions = $this->coreRegistry->registry('royalcybermarketplace_question_product');
         $data = [];
         if (!empty($questions)) {
             $data['total_page'] = $questions->getLastPageNumber();
@@ -102,7 +102,7 @@ class ListView extends \Magento\Framework\View\Element\Template
     /**
      * Retrieve the question information
      *
-     * @param \RoyalCyber\ProductQuestions\Model\ResourceModel\Question\CollectionFactory $question
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\CollectionFactory $question
      * @return object
      */
     public function getQuestionInfo($question)
@@ -140,7 +140,7 @@ class ListView extends \Magento\Framework\View\Element\Template
     /**
      * Retrieve the answer information
      *
-     * @param \RoyalCyber\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory $answer
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory $answer
      * @return array
      */
     protected function getAnswerInfo($answer)
@@ -161,8 +161,8 @@ class ListView extends \Magento\Framework\View\Element\Template
     /**
      * Get list of answers of the question
      *
-     * @param \RoyalCyber\ProductQuestions\Model\ResourceModel\Question\CollectionFactory $question
-     * @return \RoyalCyber\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\CollectionFactory $question
+     * @return \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory
      */
     public function getAnswerList($question)
     {
@@ -170,9 +170,9 @@ class ListView extends \Magento\Framework\View\Element\Template
             'main_table.question_id',
             $question->getQuestionId()
         )->addStatusFilter(
-            \RoyalCyber\ProductQuestions\Model\Status::STATUS_APPROVED
+            \RoyalCyberMarketplace\ProductQuestions\Model\Status::STATUS_APPROVED
         )->addVisibilityFilter(
-            \RoyalCyber\ProductQuestions\Model\Visibility::VISIBILITY_VISIBLE
+            \RoyalCyberMarketplace\ProductQuestions\Model\Visibility::VISIBILITY_VISIBLE
         );
 
         return $collection;

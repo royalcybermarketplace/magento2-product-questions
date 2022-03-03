@@ -1,15 +1,15 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Model\ResourceModel\Question\Grid;
+namespace RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\Grid;
 
 use Magento\Framework\Api\Search\SearchResultInterface;
 use Magento\Framework\Api\Search\AggregationInterface;
-use RoyalCyber\ProductQuestions\Model\ResourceModel\Question\Collection as QuestionCollection;
+use RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\Collection as QuestionCollection;
 
 /**
  * Class Collection

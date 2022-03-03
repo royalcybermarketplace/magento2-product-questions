@@ -1,11 +1,11 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Block\Product;
+namespace RoyalCyberMarketplace\ProductQuestions\Block\Product;
 
 use Magento\Framework\DataObject\IdentityInterface;
 use Magento\Framework\View\Element\Template;
@@ -27,20 +27,20 @@ class Question extends Template implements IdentityInterface
     /**
      * Question Collection
      *
-     * @var \RoyalCyber\ProductQuestions\Model\ResourceModel\Question\CollectionFactory
+     * @var \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\CollectionFactory
      */
     protected $questionCollectionFactory;
 
     /**
      * @param \Magento\Framework\View\Element\Template\Context $context
      * @param \Magento\Framework\Registry $registry
-     * @param \RoyalCyber\ProductQuestions\Model\ResourceModel\Question\CollectionFactory $collectionFactory
+     * @param \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\CollectionFactory $collectionFactory
      * @param array $data
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Magento\Framework\Registry $registry,
-        \RoyalCyber\ProductQuestions\Model\ResourceModel\Question\CollectionFactory $collectionFactory,
+        \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\CollectionFactory $collectionFactory,
         array $data = []
     ) {
         $this->coreRegistry = $registry;
@@ -118,9 +118,9 @@ class Question extends Template implements IdentityInterface
             'main_table.product_id',
             $this->getProductId()
         )->addStatusFilter(
-            \RoyalCyber\ProductQuestions\Model\Status::STATUS_APPROVED
+            \RoyalCyberMarketplace\ProductQuestions\Model\Status::STATUS_APPROVED
         )->addVisibilityFilter(
-            \RoyalCyber\ProductQuestions\Model\Visibility::VISIBILITY_VISIBLE
+            \RoyalCyberMarketplace\ProductQuestions\Model\Visibility::VISIBILITY_VISIBLE
         )->addProductIdFilter(
             $this->getProductId()
         );
@@ -135,6 +135,6 @@ class Question extends Template implements IdentityInterface
      */
     public function getIdentities()
     {
-        return [\RoyalCyber\ProductQuestions\Model\Question::CACHE_TAG];
+        return [\RoyalCyberMarketplace\ProductQuestions\Model\Question::CACHE_TAG];
     }
 }

@@ -1,24 +1,24 @@
 <?php
 /**
- * @category    RoyalCyber
- * @package     RoyalCyber_ProductQuestions
- * @copyright   Copyright (c) 2022 RoyalCyber (https://royalcyber.com/)
+ * @category    RoyalCyberMarketplace
+ * @package     RoyalCyberMarketplace_ProductQuestions
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
-namespace RoyalCyber\ProductQuestions\Model;
+namespace RoyalCyberMarketplace\ProductQuestions\Model;
 
 /**
  * Class Question
- * @package RoyalCyber\ProductQuestions\Model
+ * @package RoyalCyberMarketplace\ProductQuestions\Model
  */
-class Question extends \Magento\Framework\Model\AbstractModel implements \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+class Question extends \Magento\Framework\Model\AbstractModel implements \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
 {
     /**
      * Cache tag
      *
      * @var string
      */
-    const CACHE_TAG = 'royalcyber_product_questions';
+    const CACHE_TAG = 'royalcybermarketplace_product_questions';
 
     /**
      * Initialize resource model
@@ -27,7 +27,7 @@ class Question extends \Magento\Framework\Model\AbstractModel implements \RoyalC
      */
     protected function _construct()
     {
-        $this->_init(\RoyalCyber\ProductQuestions\Model\ResourceModel\Question::class);
+        $this->_init(\RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question::class);
     }
 
     /**
@@ -194,7 +194,7 @@ class Question extends \Magento\Framework\Model\AbstractModel implements \RoyalC
      * Set ID
      *
      * @param int $id
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setId($id)
     {
@@ -205,7 +205,7 @@ class Question extends \Magento\Framework\Model\AbstractModel implements \RoyalC
      * Set question detail
      *
      * @param string $questionDetail
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionDetail($questionDetail)
     {
@@ -216,7 +216,7 @@ class Question extends \Magento\Framework\Model\AbstractModel implements \RoyalC
      * Set question author name
      *
      * @param string $questionAuthorName
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionAuthorName($questionAuthorName)
     {
@@ -227,7 +227,7 @@ class Question extends \Magento\Framework\Model\AbstractModel implements \RoyalC
      * Set question author email
      *
      * @param string $questionAuthorEmail
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionAuthorEmail($questionAuthorEmail)
     {
@@ -238,7 +238,7 @@ class Question extends \Magento\Framework\Model\AbstractModel implements \RoyalC
      * Set question status id
      *
      * @param int $questionStatusId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionStatusId($questionStatusId)
     {
@@ -249,7 +249,7 @@ class Question extends \Magento\Framework\Model\AbstractModel implements \RoyalC
      * Set question user type id
      *
      * @param int $questionUserTypeId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionUserTypeId($questionUserTypeId)
     {
@@ -260,7 +260,7 @@ class Question extends \Magento\Framework\Model\AbstractModel implements \RoyalC
      * Set customer id
      *
      * @param int|null $customerId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setCustomerId($customerId)
     {
@@ -271,7 +271,7 @@ class Question extends \Magento\Framework\Model\AbstractModel implements \RoyalC
      * Set question visibility id
      *
      * @param int $questionVisibilityId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionVisibilityId($questionVisibilityId)
     {
@@ -282,7 +282,7 @@ class Question extends \Magento\Framework\Model\AbstractModel implements \RoyalC
      * Set question store id
      *
      * @param int $questionStoreId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionStoreId($questionStoreId)
     {
@@ -293,7 +293,7 @@ class Question extends \Magento\Framework\Model\AbstractModel implements \RoyalC
      * Set question likes
      *
      * @param int $questionLikes
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionLikes($questionLikes)
     {
@@ -304,7 +304,7 @@ class Question extends \Magento\Framework\Model\AbstractModel implements \RoyalC
      * Set question dislike
      *
      * @param int $questionDislikes
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionDislikes($questionDislikes)
     {
@@ -315,7 +315,7 @@ class Question extends \Magento\Framework\Model\AbstractModel implements \RoyalC
      * Set total answers
      *
      * @param int $totalAnswers
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setTotalAnswers($totalAnswers)
     {
@@ -326,7 +326,7 @@ class Question extends \Magento\Framework\Model\AbstractModel implements \RoyalC
      * Set pending answers
      *
      * @param int $pendingAnswers
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setPendingAnswers($pendingAnswers)
     {
@@ -337,7 +337,7 @@ class Question extends \Magento\Framework\Model\AbstractModel implements \RoyalC
      * Set product id
      *
      * @param int $productId
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setProductId($productId)
     {
@@ -348,7 +348,7 @@ class Question extends \Magento\Framework\Model\AbstractModel implements \RoyalC
      * Set question created by
      *
      * @param int $questionCreatedBy
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionCreatedBy($questionCreatedBy)
     {
@@ -359,7 +359,7 @@ class Question extends \Magento\Framework\Model\AbstractModel implements \RoyalC
      * Set question created at
      *
      * @param string $questionCreatedAt
-     * @return \RoyalCyber\ProductQuestions\Api\Data\QuestionInterface
+     * @return \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
      */
     public function setQuestionCreatedAt($questionCreatedAt)
     {
