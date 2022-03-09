@@ -175,6 +175,9 @@ class Post extends \Magento\Framework\App\Action\Action
                 if ($this->questionData->getAutoApprovalNewAnswer()) {
                     $data['answer_status_id'] = \RoyalCyberMarketplace\ProductQuestions\Model\Status::STATUS_APPROVED;
                     $messageSuccess = __('You submitted your %1 successfully.', $text);
+                } else {
+                    $data['answer_status_id'] = \RoyalCyberMarketplace\ProductQuestions\Model\Status::STATUS_PENDING;
+                    $messageSuccess = __('Your %1 is submitted successfully, and it\'s under approval.', $text);
                 }
                 $model = $this->answerFactory->create();
                 break;
@@ -193,6 +196,9 @@ class Post extends \Magento\Framework\App\Action\Action
                 if ($this->questionData->getAutoApprovalNewQuestion()) {
                     $data['question_status_id'] = \RoyalCyberMarketplace\ProductQuestions\Model\Status::STATUS_APPROVED;
                     $messageSuccess = __('You submitted your %1 successfully.', $text);
+                } else {
+                    $data['question_status_id'] = \RoyalCyberMarketplace\ProductQuestions\Model\Status::STATUS_PENDING;
+                    $messageSuccess = __('Your %1 is submitted successfully, and it\'s under approval.', $text);
                 }
                 break;
             default:
