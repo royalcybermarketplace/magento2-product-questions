@@ -2,7 +2,6 @@
 <!--
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
  -->
@@ -12,7 +11,7 @@
     </head>
     <body>
         <referenceBlock name="product.info.details">
-            <block class="RoyalCyberMarketplace\ProductQuestions\Block\Product\Question" name="questions.tab" as="questions" template="RoyalCyberMarketplace_ProductQuestions::question.phtml" group="detailed_info" cacheable="false">
+            <block class="RoyalCyberMarketplace\ProductQuestions\Block\Product\Question" name="questions.tab" as="questions" template="RoyalCyberMarketplace_ProductQuestions::question.phtml" group="detailed_info">
                 <block class="RoyalCyberMarketplace\ProductQuestions\Block\Form" name="product.question.form" as="question_form" template="RoyalCyberMarketplace_ProductQuestions::question/form.phtml">
                     <block class="RoyalCyberMarketplace\ProductQuestions\Block\Form" name="product.question.popup" as="question_popup_content" template="RoyalCyberMarketplace_ProductQuestions::question/popup.phtml" />
                 </block>

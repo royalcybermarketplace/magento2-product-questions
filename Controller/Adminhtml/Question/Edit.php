@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -9,10 +8,10 @@ namespace RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Question;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Backend\App\Action;
+use RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Edit as BlockEdit;
 
 /**
  * Class Edit
- * @package RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Question
  */
 class Edit extends Action implements HttpGetActionInterface
 {
@@ -102,7 +101,7 @@ class Edit extends Action implements HttpGetActionInterface
         $resultPage->getConfig()->getTitle()->prepend(__('Questions'));
         $resultPage->getConfig()->getTitle()
             ->prepend($model->getId() ? __('Edit Question') : __('New Question'));
-        $resultPage->addContent($resultPage->getLayout()->createBlock(\RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Edit::class));
+        $resultPage->addContent($resultPage->getLayout()->createBlock(BlockEdit::class));
         return $resultPage;
     }
 }

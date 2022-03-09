@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -15,7 +14,6 @@ use RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\Collecti
 
 /**
  * Class Massdelete
- * @package RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Question
  */
 class Massdelete extends \Magento\Backend\App\Action implements HttpPostActionInterface
 {

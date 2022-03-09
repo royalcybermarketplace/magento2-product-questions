@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -9,6 +8,8 @@ namespace RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Question;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\Controller\ResultFactory;
+use RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Product\Grid;
+use RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Add;
 
 /**
  * Create RoyalCyberMarketplace product question new action.
@@ -32,10 +33,8 @@ class NewAction extends \Magento\Backend\App\Action implements HttpGetActionInte
         $resultPage->setActiveMenu('Magento_Backend::marketing');
         $resultPage->getConfig()->getTitle()->prepend(__('Product Questions'));
         $resultPage->getConfig()->getTitle()->prepend(__('New Question'));
-        $resultPage->addContent($resultPage->getLayout()->createBlock(\RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Add::class));
-        $resultPage->addContent($resultPage->getLayout()->createBlock(
-            \RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Product\Grid::class
-        ));
+        $resultPage->addContent($resultPage->getLayout()->createBlock(Add::class));
+        $resultPage->addContent($resultPage->getLayout()->createBlock(Grid::class));
         return $resultPage;
     }
 }

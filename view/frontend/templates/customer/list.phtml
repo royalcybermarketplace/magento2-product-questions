@@ -1,36 +1,35 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  *
 
-// @codingStandardsIgnoreFile
 /** @var \RoyalCyberMarketplace\ProductQuestions\Block\Customer\ListCustomer $block */
+// @codingStandardsIgnoreFile
 ?>
 <?php if ($block->getQuestions() && count($block->getQuestions())): ?>
     <div class="table-wrapper questions">
         <table class="data table table-questions" id="my-questions-table">
             <thead>
                 <tr>
-                    <th scope="col" class="col date"><?php /* @escapeNotVerified */ echo __('Created') ?></th>
-                    <th scope="col" class="col item"><?php /* @escapeNotVerified */ echo __('Product Name') ?></th>
-                    <th scope="col" class="col description"><?php /* @escapeNotVerified */ echo __('Question') ?></th>
-                    <th scope="col" class="col actions"><?php /* @escapeNotVerified */ echo __('Status') ?></th>
+                    <th scope="col" class="col date"><?= /* @noEscape */ __('Created') ?></th>
+                    <th scope="col" class="col item"><?= /* @noEscape */ __('Product Name') ?></th>
+                    <th scope="col" class="col description"><?= /* @noEscape */ __('Question') ?></th>
+                    <th scope="col" class="col actions"><?= /* @noEscape */ __('Status') ?></th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($block->getQuestions() as $question): ?>
                 <tr>
-                    <td data-th="<?php echo $block->escapeHtml(__('Created')) ?>" class="col date"><?php /* @escapeNotVerified */ echo $block->dateFormat($question->getQuestionCreatedAt()); ?></td>
-                    <td data-th="<?php echo $block->escapeHtml(__('Product Name')) ?>" class="col item">
+                    <td data-th="<?= /* @noEscape */ $block->escapeHtml(__('Created')) ?>" class="col date"><?= /* @noEscape */ $block->dateFormat($question->getQuestionCreatedAt()); ?></td>
+                    <td data-th="<?= /* @noEscape */ $block->escapeHtml(__('Product Name')) ?>" class="col item">
                         <strong class="product-name">
-                            <a href="<?php /* @escapeNotVerified */ echo $block->getProductUrl($question->getProductId()); ?>"><?php echo $block->escapeHtml($question->getProductName()); ?></a>
+                            <a href="<?= /* @noEscape */ $block->getProductUrl($question->getProductId()); ?>"><?= /* @noEscape */ $block->escapeHtml($question->getProductName()); ?></a>
                         </strong>
                     </td>
-                    <td data-th="<?php echo $block->escapeHtml(__('Question')) ?>" class="col description question-list">
-                        <?php echo $block->escapeHtml(nl2br($question->getQuestionDetail())); ?>
-                        <h4><?php echo __('Answers'); ?>: </h4>
+                    <td data-th="<?= /* @noEscape */ $block->escapeHtml(__('Question')) ?>" class="col description question-list">
+                        <?= /* @noEscape */ $block->escapeHtml(nl2br($question->getQuestionDetail())); ?>
+                        <h4><?= /* @noEscape */ __('Answers'); ?>: </h4>
                         <?php if (!empty($answers = $block->getAnswerList($question->getQuestionId()))): ?>
                             <ul class="parent">
                             <?php foreach ($answers as $answer): ?>
@@ -38,28 +37,28 @@
                                 <?php $dislike = ($answer['dislikes'] > 0) ? $answer['dislikes'] : ''; ?>
                                 <li>
                                     <p class="table">
-                                        <span class="first-character"><?php echo $answer['first_character'];?></span>
+                                        <span class="first-character"><?= /* @noEscape */ $answer['first_character'];?></span>
                                         <span class="author-name">
-                                            <strong><?php echo $answer['author_name'];?></strong>
-                                            <small class="time"><?php echo __('Answered by'); ?> <?php echo $answer['answered_by'];?> <?php echo __('on'); ?> <?php echo $answer['created_at'];?></small>
+                                            <strong><?= /* @noEscape */ $answer['author_name'];?></strong>
+                                            <small class="time"><?= /* @noEscape */ __('Answered by'); ?> <?= /* @noEscape */ $answer['answered_by'];?> <?= /* @noEscape */ __('on'); ?> <?= /* @noEscape */ $answer['created_at'];?></small>
                                         </span>
                                     </p>
-                                    <p><?php echo strip_tags($answer['content'], '<br/><br /><br>');?></p>
-                                    <ul class="reply" comment-id="<?php echo $answer['id']; ?>">
-                                        <li title="<?php echo __('Like'); ?>" like-on="answer" class="like" clicked="false" is="like">
+                                    <p><?= /* @noEscape */ strip_tags($answer['content'], '<br/><br /><br>');?></p>
+                                    <ul class="reply" comment-id="<?= /* @noEscape */ $answer['id']; ?>">
+                                        <li title="<?= /* @noEscape */ __('Like'); ?>" like-on="answer" class="like" clicked="false" is="like">
                                             <span>
                                                 <span class="number">
-                                                    <?php echo $like;?>
+                                                    <?= /* @noEscape */ $like;?>
                                                 </span>
-                                                <?php echo __('Like'); ?>
+                                                <?= /* @noEscape */ __('Like'); ?>
                                             </span>
                                         </li>
-                                        <li title="<?php echo __('Dislike'); ?>" dislike-on="answer" class="dislike" clicked="false" is="dislike">
+                                        <li title="<?= /* @noEscape */ __('Dislike'); ?>" dislike-on="answer" class="dislike" clicked="false" is="dislike">
                                             <span>
                                                 <span class="number">
-                                                    <?php echo $dislike;?>
+                                                    <?= /* @noEscape */ $dislike;?>
                                                 </span>
-                                                <?php echo __('Dislike'); ?>
+                                                <?= /* @noEscape */ __('Dislike'); ?>
                                             </span>
                                         </li>
                                     </ul>
@@ -68,12 +67,12 @@
                             </ul>
                         <?php else: ?>
                             <ul>
-                                <li><?php echo __('Our administrator will reply your question soon.'); ?></li>
+                                <li><?= /* @noEscape */ __('Our administrator will reply your question soon.'); ?></li>
                             </ul>
                         <?php endif; ?>
                     </td>
-                    <td data-th="<?php echo $block->escapeHtml(__('Status')) ?>" class="col actions">
-                        <?php echo $this->helper('RoyalCyberMarketplace\ProductQuestions\Helper\Data')->getStatusText($question->getQuestionStatusId()); ?>
+                    <td data-th="<?= /* @noEscape */ $block->escapeHtml(__('Status')) ?>" class="col actions">
+                        <?= /* @noEscape */ $this->helper('RoyalCyberMarketplace\ProductQuestions\Helper\Data')->getStatusText($question->getQuestionStatusId()); ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
@@ -82,7 +81,7 @@
     </div>
     <?php if ($block->getToolbarHtml()): ?>
         <div class="toolbar products-reviews-toolbar bottom">
-            <?php echo $block->getToolbarHtml() ?>
+            <?= /* @noEscape */ $block->getToolbarHtml() ?>
         </div>
     <?php endif; ?>
     <div id="likes-dislikes"></div>
@@ -90,19 +89,19 @@
         {
             "#likes-dislikes": {
                 "RoyalCyberMarketplace_ProductQuestions/js/process-like-dislike": {
-                    "likeDislikeUrl": "<?php /* @escapeNotVerified */ echo $block->getLikeDislikeUrl();?>",
-                    "loadingNumberImage": "<?php echo $block->getViewFileUrl('RoyalCyberMarketplace_ProductQuestions::images/loading-number.gif'); ?>"
+                    "likeDislikeUrl": "<?= /* @noEscape */ $block->getLikeDislikeUrl();?>",
+                    "loadingNumberImage": "<?= /* @noEscape */ $block->getViewFileUrl('RoyalCyberMarketplace_ProductQuestions::images/loading-number.gif'); ?>"
                 }
             }
         }
     </script>
 <?php else: ?>
-    <div class="message info empty"><span><?php /* @escapeNotVerified */ echo __('You have submitted no questions.') ?></span></div>
+    <div class="message info empty"><span><?= /* @noEscape */ __('You have submitted no questions.') ?></span></div>
 <?php endif; ?>
 <div class="actions-toolbar">
     <div class="secondary">
-        <a class="action back" href="<?php echo $block->escapeUrl($block->getBackUrl()) ?>">
-            <span><?php /* @escapeNotVerified */ echo __('Back') ?></span>
+        <a class="action back" href="<?= /* @noEscape */ $block->escapeUrl($block->getBackUrl()) ?>">
+            <span><?= /* @noEscape */ __('Back') ?></span>
         </a>
     </div>
 </div>

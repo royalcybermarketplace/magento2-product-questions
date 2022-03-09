@@ -5,8 +5,8 @@
             "question_id": true
         },
         "constraint": {
-            "ROYALCYBER_PRD_QUESTIONS_SHARING_PRD_ID_CAT_PRD_ENTT_ENTT_ID": true,
-            "FK_F045E2E1777847CAB2D2DB8D4C3D9B31": true
+            "FK_94298D29A9BADD7CDB60447619C824F2": true,
+            "FK_26601D9B54297AD016DFC2B4FEA71FC6": true
         }
     },
     "royalcybermarketplace_product_questions_status": {
@@ -24,8 +24,8 @@
             "question_id": true
         },
         "constraint": {
-            "ROYALCYBER_PRODUCT_QUESTIONS_STORE_STORE_VIEW_ID_STORE_STORE_ID": true,
-            "FK_228D7FE042B5318263EE6F8A6DC076A8": true
+            "FK_994A20AB8CCB617305B715156E83B6E8": true,
+            "FK_D0B70443F0C8418720A77DC1F718F136": true
         }
     },
     "royalcybermarketplace_product_questions_user_type": {
@@ -63,15 +63,15 @@
             "answer_created_at": true
         },
         "index": {
-            "FTI_560AD1FBA8F4F633502357FE59B8E648": true
+            "FTI_13450BD0EE0BBF55CAC68390AD994334": true
         },
         "constraint": {
             "PRIMARY": true,
-            "FK_0236E8E4C4DCC62CF2C03F20A4CCC6C5": true,
-            "FK_70C94D26B487EB22CC3F4B7A86EF0DD5": true,
-            "FK_6E7038023DFC302C5E6BA016847DA494": true,
-            "FK_322A24D919CF2EDFBF4F481E6A0DDF2A": true,
-            "FK_AC9C6BB66013FB1603914C3473771B4F": true
+            "FK_DA150704A966A7E5EAEE1B21FB1F76A2": true,
+            "FK_9E56A29493DF566062952248769EBA19": true,
+            "FK_77884014084C2060C3BEF330A4A48971": true,
+            "FK_6325AC797663440E00FBEF13F636B274": true,
+            "FK_0536916CD13C54DE4BED5F5618CF0B81": true
         }
     },
     "royalcybermarketplace_product_questions": {
@@ -94,17 +94,17 @@
             "question_created_at": true
         },
         "index": {
-            "FTI_B14514E067C926FC6C7CBA9C5D476F43": true
+            "FTI_58903EC507922BDB77D0A02D37C5E468": true
         },
         "constraint": {
             "PRIMARY": true,
-            "FK_89FC882BF6A93735980B45F22271097F": true,
-            "FK_06ABE7A9F0612015EBC282A5EB72DF27": true,
-            "FK_69A0ED3CFF595BCCFD05DCD6C6A73D9E": true,
-            "FK_032851589B6A0744E66803CE55184F0C": true,
-            "ROYALCYBER_PRODUCT_QUESTIONS_QUESTION_STORE_ID_STORE_STORE_ID": true,
-            "ROYALCYBER_PRD_QUESTIONS_PRD_ID_CAT_PRD_ENTT_ENTT_ID": true,
-            "ROYALCYBER_PRD_QUESTIONS_CSTR_ID_CSTR_ENTT_ENTT_ID": true
+            "FK_90D8DBB160A95191279DCC948A1FC8E2": true,
+            "FK_8C268EC4675908036D598A27C47A7A03": true,
+            "FK_9B7B8A63DEBDCAE1C84F393679C31CFA": true,
+            "FK_ADD4F9A0D40E885CC9B6FE4423580C41": true,
+            "FK_79B1BCE191EE7B928A67BF71648C6090": true,
+            "ROYALCYBERMARKETPLACE_PRD_QUESTIONS_PRD_ID_CAT_PRD_ENTT_ENTT_ID": true,
+            "ROYALCYBERMARKETPLACE_PRD_QUESTIONS_CSTR_ID_CSTR_ENTT_ENTT_ID": true
         }
     }
 }

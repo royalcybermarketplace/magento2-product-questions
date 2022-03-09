@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -10,10 +9,11 @@ namespace RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Question;
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Backend\App\Action;
 use Magento\Framework\Exception\LocalizedException;
+use RoyalCyberMarketplace\ProductQuestions\Model\QuestionFactory;
+use RoyalCyberMarketplace\ProductQuestions\Api\QuestionRepositoryInterface;
 
 /**
  * Class Save
- * @package RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Question
  */
 class Save extends \Magento\Backend\App\Action implements HttpPostActionInterface
 {
@@ -34,17 +34,16 @@ class Save extends \Magento\Backend\App\Action implements HttpPostActionInterfac
      */
     private $questionRepository;
 
-
     public function __construct(
         Action\Context $context,
         \RoyalCyberMarketplace\ProductQuestions\Model\QuestionFactory $questionFactory = null,
         \RoyalCyberMarketplace\ProductQuestions\Api\QuestionRepositoryInterface $questionRepository = null
     ) {
         $this->questionFactory = $questionFactory
-            ?: \Magento\Framework\App\ObjectManager::getInstance()->get(\RoyalCyberMarketplace\ProductQuestions\Model\QuestionFactory::class);
+            ?: \Magento\Framework\App\ObjectManager::getInstance()->get(QuestionFactory::class);
         $this->questionRepository = $questionRepository
             ?: \Magento\Framework\App\ObjectManager::getInstance()
-                ->get(\RoyalCyberMarketplace\ProductQuestions\Api\QuestionRepositoryInterface::class);
+                ->get(QuestionRepositoryInterface::class);
         parent::__construct($context);
     }
 
@@ -89,7 +88,8 @@ class Save extends \Magento\Backend\App\Action implements HttpPostActionInterfac
             } catch (\Exception $e) {
                 $this->messageManager->addExceptionMessage($e, __('Something went wrong while saving the question.'));
             }
-            return $resultRedirect->setPath('*/*/edit', ['question_id' => $this->getRequest()->getParam('question_id')]);
+            $questionId = $this->getRequest()->getParam('question_id');
+            return $resultRedirect->setPath('*/*/edit', ['question_id' => $questionId]);
         }
         return $resultRedirect->setPath('*/*/');
     }

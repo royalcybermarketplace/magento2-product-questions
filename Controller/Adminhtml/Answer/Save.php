@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -13,7 +12,6 @@ use Magento\Framework\Exception\LocalizedException;
 
 /**
  * Class Save
- * @package RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Answer
  */
 class Save extends \Magento\Backend\App\Action implements HttpPostActionInterface
 {

@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -13,7 +12,6 @@ use Magento\Framework\View\Result\PageFactory;
 
 /**
  * Class Question Index
- * @package RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Question
  */
 class Index extends \Magento\Backend\App\Action implements HttpGetActionInterface
 {

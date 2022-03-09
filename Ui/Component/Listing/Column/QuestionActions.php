@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -16,8 +15,8 @@ use Magento\Framework\View\Element\UiComponentFactory;
 class QuestionActions extends \Magento\Ui\Component\Listing\Columns\Column
 {
     /** Url path */
-    const QUESTION_URL_PATH_EDIT = 'product_questions/question/edit';
-    const QUESTION_URL_PATH_DELETE = 'product_questions/question/delete';
+    const QUEST_URL_PE = 'product_questions/question/edit';
+    const QUEST_URL_PD = 'product_questions/question/delete';
 
     /**
      * @var \Magento\Framework\UrlInterface
@@ -48,7 +47,7 @@ class QuestionActions extends \Magento\Ui\Component\Listing\Columns\Column
         UrlInterface $urlBuilder,
         array $components = [],
         array $data = [],
-        $editUrl = self::QUESTION_URL_PATH_EDIT
+        $editUrl = self::QUEST_URL_PE
     ) {
         $this->urlBuilder = $urlBuilder;
         $this->editUrl = $editUrl;
@@ -69,8 +68,9 @@ class QuestionActions extends \Magento\Ui\Component\Listing\Columns\Column
                         'label' => __('Edit')
                     ];
                     $title = $this->getEscaper()->escapeHtml('question');
+                    $delUrl = self::QUEST_URL_PD;
                     $item[$name]['delete'] = [
-                        'href' => $this->urlBuilder->getUrl(self::QUESTION_URL_PATH_DELETE, ['question_id' => $item['question_id']]),
+                        'href' => $this->urlBuilder->getUrl($delUrl, ['question_id' => $item['question_id']]),
                         'label' => __('Delete'),
                         'confirm' => [
                             'title' => __('Delete %1', $title),

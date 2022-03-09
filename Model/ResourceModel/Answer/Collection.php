@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -9,7 +8,6 @@ namespace RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer;
 
 /**
  * Class Collection
- * @package RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer
  */
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {

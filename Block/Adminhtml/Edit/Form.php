@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -9,7 +8,6 @@ namespace RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Edit;
 
 /**
  * Class Question Edit Form
- * @package RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Question\Edit
  */
 class Form extends \Magento\Backend\Block\Widget\Form\Generic
 {

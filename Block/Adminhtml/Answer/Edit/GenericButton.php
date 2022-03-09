@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 namespace RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Answer\Edit;
@@ -52,6 +51,7 @@ class GenericButton
                 $this->context->getRequest()->getParam('answer_id')
             )->getId();
         } catch (NoSuchEntityException $e) {
+            return null;
         }
         return null;
     }

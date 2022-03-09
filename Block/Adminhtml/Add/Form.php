@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -9,8 +8,6 @@ namespace RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Add;
 
 /**
  * Adminhtml add product question form
- *
- * @author   Magento RoyalCyberMarketplace Team <royalcybermarketplace@gmail.com>
  */
 class Form extends \Magento\Backend\Block\Widget\Form\Generic
 {

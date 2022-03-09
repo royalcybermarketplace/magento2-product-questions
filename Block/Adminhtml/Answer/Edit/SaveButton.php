@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 namespace RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Answer\Edit;
@@ -11,7 +10,6 @@ use Magento\Ui\Component\Control\Container;
 
 /**
  * Class SaveButton
- * @package RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Answer\Edit
  */
 class SaveButton extends GenericButton implements ButtonProviderInterface
 {

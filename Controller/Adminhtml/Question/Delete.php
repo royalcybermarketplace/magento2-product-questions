@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -11,7 +10,6 @@ use Magento\Framework\App\Action\HttpPostActionInterface;
 
 /**
  * Class Question Delete
- * @package RoyalCyberMarketplace\ProductQuestions\Controller\Adminhtml\Question
  */
 class Delete extends \Magento\Backend\App\Action implements HttpPostActionInterface
 {

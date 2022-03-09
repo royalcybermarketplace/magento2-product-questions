@@ -1,27 +1,27 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  *
  * @var $block \RoyalCyberMarketplace\ProductQuestions\Block\Product\Question
  */
+// @codingStandardsIgnoreFile
 ?>
 
 <div id="product-question-container" data-role="product-question"></div>
-<?php echo $block->getChildHtml(); ?>
+<?= /* @noEscape */ $block->getChildHtml(); ?>
 
 <script type="text/x-magento-init">
     {
         "*": {
             "RoyalCyberMarketplace_ProductQuestions/js/process-questions": {
-                "productQuestionUrl": "<?php /* @escapeNotVerified */ echo $block->getProductQuestionUrl();?>"
+                "productQuestionUrl": "<?= /* @noEscape */ $block->getProductQuestionUrl();?>"
             }
         },
         "#product-question-container": {
             "RoyalCyberMarketplace_ProductQuestions/js/process-like-dislike": {
-                "likeDislikeUrl": "<?php /* @escapeNotVerified */ echo $block->getLikeDislikeUrl();?>",
-                "loadingNumberImage": "<?php echo $block->getViewFileUrl('RoyalCyberMarketplace_ProductQuestions::images/loading-number.gif'); ?>"
+                "likeDislikeUrl": "<?= /* @noEscape */ $block->getLikeDislikeUrl();?>",
+                "loadingNumberImage": "<?= /* @noEscape */ $block->getViewFileUrl('RoyalCyberMarketplace_ProductQuestions::images/loading-number.gif'); //phpcs:ignore?>" 
             }
         }
     }

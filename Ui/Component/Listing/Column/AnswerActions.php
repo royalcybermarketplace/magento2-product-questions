@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -15,7 +14,6 @@ use Magento\Framework\View\Element\UiComponentFactory;
 
 /**
  * Class AnswerActions
- * @package RoyalCyberMarketplace\ProductQuestions\Ui\Component\Listing\Column
  */
 class AnswerActions extends \Magento\Ui\Component\Listing\Columns\Column
 {

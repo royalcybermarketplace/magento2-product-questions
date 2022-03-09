@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -18,6 +17,8 @@ use Magento\Framework\Reflection\DataObjectProcessor;
 use RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question as ResourceQuestion;
 use RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Question\CollectionFactory as QuestionCollectionFactory;
 use Magento\Store\Model\StoreManagerInterface;
+use RoyalCyberMarketplace\ProductQuestions\Model\Api\SearchCriteria\QuestionCollectionProcessor;
+use Magento\Framework\App\ObjectManager;
 
 /**
  * Class QuestionRepository
@@ -211,9 +212,7 @@ class QuestionRepository implements QuestionRepositoryInterface
     private function getCollectionProcessor()
     {
         if (!$this->collectionProcessor) {
-            $this->collectionProcessor = \Magento\Framework\App\ObjectManager::getInstance()->get(
-                'RoyalCyberMarketplace\ProductQuestions\Model\Api\SearchCriteria\QuestionCollectionProcessor'
-            );
+            $this->collectionProcessor = ObjectManager::getInstance()->get(QuestionCollectionProcessor::class);
         }
         return $this->collectionProcessor;
     }

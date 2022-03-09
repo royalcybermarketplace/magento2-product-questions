@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -16,7 +15,6 @@ use RoyalCyberMarketplace\ProductQuestions\Model\UserType;
 
 /**
  * Class Post
- * @package RoyalCyberMarketplace\ProductQuestions\Controller\Product
  */
 class Post extends \Magento\Framework\App\Action\Action
 {
@@ -132,10 +130,10 @@ class Post extends \Magento\Framework\App\Action\Action
         }
 
         $data = $this->getRequest()->getPostValue();
-
         $data['id'] = $this->getRequest()->getParam('id');
 
         $type = $data['type'];
+        $defaultCase = 0;
         $text = 'question';
         $messageSuccess = __('You submitted your %1 for moderation.', $text);
 
@@ -154,7 +152,9 @@ class Post extends \Magento\Framework\App\Action\Action
         $userCode = $this->userType->getGuestCode();
         if ($this->customerSession->isLoggedIn()) {
             $data['customer_id'] = $this->customerSession->getCustomer()->getEntityId();
-            $data['author_name'] = $this->customerSession->getCustomer()->getFirstname().' '.$this->customerSession->getCustomer()->getLastname();
+            $firstName = $this->customerSession->getCustomer()->getFirstname();
+            $lastName = $this->customerSession->getCustomer()->getLastname();
+            $data['author_name'] = $firstName.' '.$lastName;
             $data['author_email'] = $this->customerSession->getCustomer()->getEmail();
             $userCode = $this->userType->getCustomerCode();
         }
@@ -197,9 +197,13 @@ class Post extends \Magento\Framework\App\Action\Action
                 break;
             default:
                 $this->messageManager->addError(__('We can\'t post your %1 right now.', $text));
-                $resultRedirect->setUrl($this->_redirect->getRefererUrl());
-                return $resultRedirect;
+                $defaultCase = 1;
                 break;
+        }
+
+        if ($defaultCase == 1) {
+            $resultRedirect->setUrl($this->_redirect->getRefererUrl());
+            return $resultRedirect;
         }
 
         try {

@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -12,8 +11,6 @@ use Magento\Framework\View\Element\Template;
 
 /**
  * Product Question Tab
- *
- * @author     GiaPhuGroup Ltd. <bestearnmoney87@gmail.com>
  */
 class Question extends Template implements IdentityInterface
 {

@@ -1,13 +1,14 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
 namespace RoyalCyberMarketplace\ProductQuestions\Controller\Product;
 
 use Magento\Framework\Exception\NoSuchEntityException;
+use RoyalCyberMarketplace\ProductQuestions\Model\Answer as AnswerModel;
+use RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer as AnswerResourceModel;
 
 class LikeDislike extends \Magento\Framework\App\Action\Action
 {
@@ -41,7 +42,7 @@ class LikeDislike extends \Magento\Framework\App\Action\Action
 
         if ($this->getRequest()->isAjax()) {
             if ($this->getRequest()->getParam('onType')) {
-                $data = $this->processUpdate(\RoyalCyberMarketplace\ProductQuestions\Model\Answer::class, \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer::class, 'answer_id');
+                $data = $this->processUpdate(AnswerModel::class, AnswerResourceModel::class, 'answer_id');
             }
         }
 
@@ -63,13 +64,14 @@ class LikeDislike extends \Magento\Framework\App\Action\Action
         $result['error'] = true;
         $result['total_number'] = null;
         $result['message'] = __('You are the man');
+        $modelColumn = $model->getData($column);
 
-        if ($model->getData($column)) {
+        if ($modelColumn) {
             if ($this->getRequest()->getParam('type') == 'like') {
-                $result['total_number'] = $this->_objectManager->create($resourceModel)->updateLikes($model->getData($column));
+                $result['total_number'] = $this->_objectManager->create($resourceModel)->updateLikes($modelColumn);
             }
             if ($this->getRequest()->getParam('type') == 'dislike') {
-                $result['total_number'] = $this->_objectManager->create($resourceModel)->updateDislikes($model->getData($column));
+                $result['total_number'] = $this->_objectManager->create($resourceModel)->updateDislikes($modelColumn);
             }
             $result['error'] = false;
         }

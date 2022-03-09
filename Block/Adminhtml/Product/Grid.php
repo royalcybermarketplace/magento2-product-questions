@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -9,9 +8,6 @@ namespace RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Product;
 
 /**
  * Adminhtml product grid block
- *
- * @author      Magento RoyalCyberMarketplace Team <royalcybermarketplace@gmail.com>
- * @SuppressWarnings(PHPMD.DepthOfInheritance)
  */
 class Grid extends \Magento\Catalog\Block\Adminhtml\Product\Grid
 {

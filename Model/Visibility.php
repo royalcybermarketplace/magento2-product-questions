@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -11,7 +10,6 @@ use Magento\Framework\Data\OptionSourceInterface;
 
 /**
  * Class Visibility
- * @package RoyalCyberMarketplace\ProductQuestions\Model
  */
 class Visibility implements OptionSourceInterface
 {

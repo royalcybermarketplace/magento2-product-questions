@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -13,7 +12,6 @@ use Magento\Framework\Controller\ResultFactory;
 
 /**
  * Class ListAjax
- * @package RoyalCyberMarketplace\ProductQuestions\Controller\Product
  */
 class ListAjax extends \Magento\Framework\App\Action\Action
 {
@@ -118,7 +116,8 @@ class ListAjax extends \Magento\Framework\App\Action\Action
         $pageSize = $this->questionData->getPageSize();
         if ($productId > 0) {
             try {
-                $product = $this->productRepository->getById($productId, false, $this->storeManager->getStore()->getId());
+                $storeId = $this->storeManager->getStore()->getId();
+                $product = $this->productRepository->getById($productId, false, $storeId);
                 $collection = $this->questionCollectionFactory->create()->addStoreFilter(
                     ['0', $this->storeManager->getStore()->getId()]
                 )->addFieldToFilter(
@@ -138,7 +137,7 @@ class ListAjax extends \Magento\Framework\App\Action\Action
 
                 $this->coreRegistry->register('royalcybermarketplace_question_product', $collection);
             } catch (NoSuchEntityException $e) {
-
+                return null;
             }
         }
 

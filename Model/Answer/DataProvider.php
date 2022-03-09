@@ -1,15 +1,15 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
 namespace RoyalCyberMarketplace\ProductQuestions\Model\Answer;
 
+use RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory;
+
 /**
  * Class DataProvider
- * @package RoyalCyberMarketplace\ProductQuestions\Model\Answer
  */
 class DataProvider extends \Magento\Ui\DataProvider\ModifierPoolDataProvider
 {
@@ -27,7 +27,7 @@ class DataProvider extends \Magento\Ui\DataProvider\ModifierPoolDataProvider
      * @param string $name
      * @param string $primaryFieldName
      * @param string $requestFieldName
-     * @param \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory $answerCollectionFactory
+     * @param CollectionFactory $answerCollectionFactory
      * @param array $meta
      * @param array $data
      * @param \Magento\Ui\DataProvider\Modifier\PoolInterface|null $pool
@@ -36,7 +36,7 @@ class DataProvider extends \Magento\Ui\DataProvider\ModifierPoolDataProvider
         $name,
         $primaryFieldName,
         $requestFieldName,
-        \RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory $answerCollectionFactory,
+        CollectionFactory $answerCollectionFactory,
         array $meta = [],
         array $data = [],
         \Magento\Ui\DataProvider\Modifier\PoolInterface $pool = null

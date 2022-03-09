@@ -1,36 +1,36 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
 /** @var $block \RoyalCyberMarketplace\ProductQuestions\Block\Customer\Recent */
+// @codingStandardsIgnoreFile
 ?>
 
 <?php if ($block->getQuestions() && count($block->getQuestions())): ?>
 <div class="block block-questions-dashboard">
     <div class="block-title">
-        <strong><?php /* @escapeNotVerified */ echo __('My Recent Questions') ?></strong>
-        <a class="action view" href="<?php /* @escapeNotVerified */ echo $block->getAllQuestionsUrl() ?>"><span><?php /* @escapeNotVerified */ echo __('View All') ?></span></a>
+        <strong><?= /* @noEscape */ __('My Recent Questions') ?></strong>
+        <a class="action view" href="<?= /* @noEscape */ $block->getAllQuestionsUrl() ?>"><span><?= /* @noEscape */ __('View All') ?></span></a>
     </div>
     <div class="block-content">
         <table>
             <thead>
                 <tr>
-                    <th><?php echo __('Created'); ?></th>
-                    <th><?php echo __('Product Name'); ?></th>
-                    <th><?php echo __('Title'); ?></th>
-                    <th><?php echo __('Status'); ?></th>
+                    <th><?= /* @noEscape */ __('Created'); ?></th>
+                    <th><?= /* @noEscape */ __('Product Name'); ?></th>
+                    <th><?= /* @noEscape */ __('Title'); ?></th>
+                    <th><?= /* @noEscape */ __('Status'); ?></th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($block->getQuestions() as $question): ?>
                 <tr>
-                    <td><?php /* @escapeNotVerified */ echo $block->dateFormat($question->getQuestionCreatedAt()); ?></td>
-                    <td><a href="<?php /* @escapeNotVerified */ echo $block->getProductUrl($question->getProductId()); ?>"><?php echo $block->escapeHtml($question->getProductName()); ?></a></td>
-                    <td><?php echo $block->escapeHtml($block->truncateString($question->getQuestionDetail())); ?></td>
-                    <td><?php echo $this->helper('RoyalCyberMarketplace\ProductQuestions\Helper\Data')->getStatusText($question->getQuestionStatusId()); ?></td>
+                    <td><?= /* @noEscape */ $block->dateFormat($question->getQuestionCreatedAt()); ?></td>
+                    <td><a href="<?= /* @noEscape */ $block->getProductUrl($question->getProductId()); ?>"><?= /* @noEscape */ $block->escapeHtml($question->getProductName()); ?></a></td>
+                    <td><?= /* @noEscape */ $block->escapeHtml($block->truncateString($question->getQuestionDetail())); ?></td>
+                    <td><?= /* @noEscape */ $this->helper('RoyalCyberMarketplace\ProductQuestions\Helper\Data')->getStatusText($question->getQuestionStatusId()); ?></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>

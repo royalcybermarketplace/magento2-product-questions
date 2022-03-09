@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -13,7 +12,6 @@ use RoyalCyberMarketplace\ProductQuestions\Model\Status as AnswerStatus;
 
 /**
  * Class Answer
- * @package RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel
  */
 class Answer extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {

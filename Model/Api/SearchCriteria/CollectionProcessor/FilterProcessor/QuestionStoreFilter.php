@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -13,7 +12,6 @@ use Magento\Framework\Data\Collection\AbstractDb;
 
 /**
  * Class QuestionStoreFilter
- * @package RoyalCyberMarketplace\ProductQuestions\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor
  */
 class QuestionStoreFilter implements CustomFilterInterface
 {

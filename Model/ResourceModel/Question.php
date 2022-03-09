@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -12,10 +11,23 @@ use Magento\Framework\Exception\LocalizedException;
 
 /**
  * Class Question
- * @package RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel
  */
 class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
+    /**
+     * Product Questions Store
+     *
+     * @var string
+     */
+    const RCM_PQST = 'royalcybermarketplace_product_questions_store';
+
+    /**
+     * Product Questions Sharing
+     *
+     * @var string
+     */
+    const RCM_PQSH = 'royalcybermarketplace_product_questions_sharing';
+
     /**
      * ValidationRules
      *
@@ -107,13 +119,13 @@ class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 
         if ($questionId) {
             $adapter = $this->getConnection();
-            $adapter->delete($this->getTable('royalcybermarketplace_product_questions_store'), ['question_id =?' => $questionId]);
+            $adapter->delete($this->getTable(self::RCM_PQST), ['question_id =?' => $questionId]);
             foreach ($storeIds as $storeId) {
                 $data = [
                     'question_id' => $questionId,
                     'store_view_id' => $storeId
                 ];
-                $adapter->insertMultiple($this->getTable('royalcybermarketplace_product_questions_store'), $data);
+                $adapter->insertMultiple($this->getTable(self::RCM_PQST), $data);
             }
         }
 
@@ -131,14 +143,14 @@ class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
     {
         if ($questionId) {
             $adapter = $this->getConnection();
-            $adapter->delete($this->getTable('royalcybermarketplace_product_questions_sharing'), ['question_id =?' => $questionId]);
+            $adapter->delete($this->getTable(self::RCM_PQSH), ['question_id =?' => $questionId]);
             foreach ($productIds as $productId) {
                 if (!empty($productId)) {
                     $data = [
                         'question_id' => $questionId,
                         'product_id' => $productId
                     ];
-                    $adapter->insertOnDuplicate($this->getTable('royalcybermarketplace_product_questions_sharing'), $data);
+                    $adapter->insertOnDuplicate($this->getTable(self::RCM_PQSH), $data);
                 }
             }
         }
@@ -171,7 +183,7 @@ class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
                 ->addFieldToFilter('entity_id', ['neq' => $productId])
                 ->joinField(
                     'product_id',
-                    'royalcybermarketplace_product_questions_sharing',
+                    self::RCM_PQSH,
                     'product_id',
                     'product_id=entity_id',
                     'question_id='.$questionId,
@@ -281,7 +293,7 @@ class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
     {
         $questionStore = $this->getConnection()
             ->select()
-            ->from($this->getTable('royalcybermarketplace_product_questions_store'), ['store_view_id'])
+            ->from($this->getTable(self::RCM_PQST), ['store_view_id'])
             ->where('question_id = :question_id');
 
         $stores = $this->getConnection()->fetchCol($questionStore, [':question_id' => $object->getQuestionId()]);

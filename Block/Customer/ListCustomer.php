@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -117,7 +116,7 @@ class ListCustomer extends \Magento\Customer\Block\Account\Dashboard
     {
         if ($this->getQuestions()) {
             $toolbar = $this->getLayout()->createBlock(
-                'Magento\Theme\Block\Html\Pager',
+                'Magento\Theme\Block\Html\Pager::class',
                 'customer_review_list.toolbar'
             )->setCollection(
                 $this->getQuestions()

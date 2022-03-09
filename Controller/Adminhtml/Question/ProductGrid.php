@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -12,6 +11,7 @@ use Magento\Framework\App\Action\HttpPostActionInterface as HttpPostActionInterf
 use Magento\Backend\App\Action;
 use Magento\Framework\View\LayoutFactory;
 use Magento\Framework\Controller\ResultFactory;
+use RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Product\Grid;
 
 class ProductGrid extends Action implements HttpPostActionInterface, HttpGetActionInterface
 {
@@ -42,7 +42,7 @@ class ProductGrid extends Action implements HttpPostActionInterface, HttpGetActi
         $layout = $this->layoutFactory->create();
         /** @var \Magento\Framework\Controller\Result\Raw $resultRaw */
         $resultRaw = $this->resultFactory->create(ResultFactory::TYPE_RAW);
-        $resultRaw->setContents($layout->createBlock(\RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Product\Grid::class)->toHtml());
+        $resultRaw->setContents($layout->createBlock(Grid::class)->toHtml());
         return $resultRaw;
     }
 }

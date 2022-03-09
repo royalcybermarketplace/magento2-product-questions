@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -17,10 +16,11 @@ use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Reflection\DataObjectProcessor;
 use RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer as ResourceAnswer;
 use RoyalCyberMarketplace\ProductQuestions\Model\ResourceModel\Answer\CollectionFactory as AnswerCollectionFactory;
+use RoyalCyberMarketplace\ProductQuestions\Model\Api\SearchCriteria\AnswerCollectionProcessor;
+use Magento\Framework\App\ObjectManager;
 
 /**
  * Class AnswerRepository
- * @package RoyalCyberMarketplace\ProductQuestions\Model
  */
 class AnswerRepository implements AnswerRepositoryInterface
 {
@@ -197,9 +197,7 @@ class AnswerRepository implements AnswerRepositoryInterface
     private function getCollectionProcessor()
     {
         if (!$this->collectionProcessor) {
-            $this->collectionProcessor = \Magento\Framework\App\ObjectManager::getInstance()->get(
-                'RoyalCyberMarketplace\ProductQuestions\Model\Api\SearchCriteria\AnswerCollectionProcessor'
-            );
+            $this->collectionProcessor = ObjectManager::getInstance()->get(AnswerCollectionProcessor::class);
         }
         return $this->collectionProcessor;
     }

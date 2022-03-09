@@ -1,20 +1,20 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
 namespace RoyalCyberMarketplace\ProductQuestions\Model;
 
+use RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface;
+
 /**
  * Class Question
- * @package RoyalCyberMarketplace\ProductQuestions\Model
  */
-class Question extends \Magento\Framework\Model\AbstractModel implements \RoyalCyberMarketplace\ProductQuestions\Api\Data\QuestionInterface
+class Question extends \Magento\Framework\Model\AbstractModel implements QuestionInterface
 {
     /**
-     * Cache tag
+     * Product Questions Cache tag
      *
      * @var string
      */

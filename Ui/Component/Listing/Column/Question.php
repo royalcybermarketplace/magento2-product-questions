@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -15,7 +14,6 @@ use RoyalCyberMarketplace\ProductQuestions\Api\QuestionRepositoryInterface;
 
 /**
  * Class Question
- * @package RoyalCyberMarketplace\ProductQuestions\Ui\Component\Listing\Column
  */
 class Question extends Column
 {
@@ -73,8 +71,11 @@ class Question extends Column
     private function getLink($questionId, $questionDetail)
     {
         $href = $this->urlBuilder->getUrl(self::QUESTION_URL_PATH_EDIT, ['question_id' => $questionId]);
-        $result = html_entity_decode('<a href="'.$href.'">'.$questionDetail.'</a>');
-
+        $result = sprintf(
+            '<a href="%s">%s</a>',
+            $href,
+            $questionDetail
+        );
         return $result;
     }
 }

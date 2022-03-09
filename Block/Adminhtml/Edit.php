@@ -1,14 +1,12 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 namespace RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml;
 
 /**
  * Class Question Edit Form
- * @package RoyalCyberMarketplace\ProductQuestions\Block\Adminhtml\Question
  */
 class Edit extends \Magento\Backend\Block\Widget\Form\Container
 {
@@ -67,13 +65,15 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
         $questionId = $this->getRequest()->getParam('question_id');
         $prevId = $actionPager->getPreviousItemId($questionId);
         $nextId = $actionPager->getNextItemId($questionId);
+        $prevIdButton = $this->getUrl('product_questions/*/*', ['question_id' => $prevId]);
+        $nextIdButton =  $this->getUrl('product_questions/*/*', ['question_id' => $nextId]);
 
         if ($prevId !== false) {
             $this->addButton(
                 'previous',
                 [
                     'label' => __('Previous'),
-                    'onclick' => 'setLocation(\'' . $this->getUrl('product_questions/*/*', ['question_id' => $prevId]) . '\')'
+                    'onclick' => 'setLocation(\'' . $prevIdButton . '\')'
                 ],
                 3,
                 10
@@ -122,7 +122,7 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
                 'next',
                 [
                     'label' => __('Next'),
-                    'onclick' => 'setLocation(\'' . $this->getUrl('product_questions/*/*', ['question_id' => $nextId]) . '\')'
+                    'onclick' => 'setLocation(\'' . $nextIdButton . '\')'
                 ],
                 3,
                 105
@@ -153,7 +153,6 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
                 ) . '\')'
             );
         }
-
 
         $this->buttonList->update(
             'delete',

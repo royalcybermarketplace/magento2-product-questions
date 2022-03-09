@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -12,7 +11,6 @@ use Magento\Store\Model\StoreManagerInterface;
 
 /**
  * Class FormatDateTime
- * @package RoyalCyberMarketplace\ProductQuestions\Model\Config\Source
  */
 class FormatDateTime
 {
@@ -52,7 +50,8 @@ class FormatDateTime
     {
         if (!empty($value)) {
             $date = $this->timezone->date(new \DateTime($value));
-            $configTimezone = $this->timezone->getConfigTimezone('store', $this->storeManager->getStore()->getStoreId());
+            $storeId = $this->storeManager->getStore()->getStoreId();
+            $configTimezone = $this->timezone->getConfigTimezone('store', $storeId);
             if (isset($configTimezone) && !$configTimezone) {
                 $date = new \DateTime($value);
             }

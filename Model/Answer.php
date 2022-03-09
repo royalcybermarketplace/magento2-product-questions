@@ -1,7 +1,6 @@
 <?php
 /**
  * @category    RoyalCyberMarketplace
- * @package     RoyalCyberMarketplace_ProductQuestions
  * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
  */
 
@@ -12,12 +11,11 @@ use RoyalCyberMarketplace\ProductQuestions\Api\Data\AnswerInterface;
 
 /**
  * Class Answer
- * @package RoyalCyberMarketplace\ProductQuestions\Model
  */
 class Answer extends AbstractModel implements AnswerInterface
 {
     /**
-     * Cache tag
+     * Cache key for product_answer
      *
      * @var string
      */
