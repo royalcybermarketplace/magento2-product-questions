@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    RoyalCyberMarketplace
+ * @copyright   Copyright (c) 2022 RoyalCyberMarketplace (https://royalcyber.com/)
+ */
+ -->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <referenceContainer name="product.info.details.after.wrapper.main">
+        <block class="Magento\Framework\View\Element\Template" name="product.questions.wrapper" after="product.reviews.wrapper" template="Magento_PageBuilder::catalog/product/view/section_wrapper.phtml">
+            <arguments>
+                <argument name="title" translate="true" xsi:type="string">Questions</argument>
+            </arguments>
+            <block class="RoyalCyberMarketplace\ProductQuestions\Block\Product\Question" name="questions.tab" as="questions" template="RoyalCyberMarketplace_ProductQuestions::question.phtml" group="detailed_info">
+                <block class="RoyalCyberMarketplace\ProductQuestions\Block\Form" name="product.question.form" as="question_form" template="RoyalCyberMarketplace_ProductQuestions::question/form.phtml">
+                    <block class="RoyalCyberMarketplace\ProductQuestions\Block\Form" name="product.question.popup" as="question_popup_content" template="RoyalCyberMarketplace_ProductQuestions::question/popup.phtml" />
+                </block>
+            </block>
+        </block>
+    </referenceContainer>
+
+    <move element="questions.tab" destination="product.questions.wrapper"/>
+</layout>

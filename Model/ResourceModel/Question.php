@@ -276,7 +276,6 @@ class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
         $this->validationRules->validateEmail($object->getQuestionAuthorEmail(), 'Author Email');
         $this->validationRules->validateVisibility($object->getQuestionVisibilityId());
         $this->validationRules->validateStatus($object->getQuestionStatusId());
-        $this->validationRules->validateUserType($object->getQuestionUserTypeId(), 'question');
         $this->validationRules->validateIntegerNumber($object->getQuestionLikes(), 'Total number of likes');
         $this->validationRules->validateIntegerNumber($object->getQuestionDislikes(), 'Total number of dislikes');
 

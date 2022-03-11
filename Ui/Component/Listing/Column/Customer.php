@@ -10,6 +10,7 @@ use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Ui\Component\Listing\Columns\Column;
 use Magento\Customer\Model\ResourceModel\CustomerRepository;
+use RoyalCyberMarketplace\ProductQuestions\Model\UserType;
 
 class Customer extends Column
 {
@@ -19,11 +20,17 @@ class Customer extends Column
     protected $customerRepository;
 
     /**
+     * @var UserType
+     */
+    protected $questionUserType;
+
+    /**
      * Customer constructor.
      *
      * @param ContextInterface $context
      * @param UiComponentFactory $uiComponentFactory
      * @param CustomerRepository $customerRepository
+     * @param UserType $questionUserType
      * @param array $components
      * @param array $data
      */
@@ -31,11 +38,13 @@ class Customer extends Column
         ContextInterface $context,
         UiComponentFactory $uiComponentFactory,
         CustomerRepository $customerRepository,
+        UserType $questionUserType,
         array $components = [],
         array $data = []
     ) {
         parent::__construct($context, $uiComponentFactory, $components, $data);
         $this->customerRepository = $customerRepository;
+        $this->questionUserType = $questionUserType;
     }
 
     /**
@@ -52,7 +61,7 @@ class Customer extends Column
                     $customer = $this->customerRepository->getById($items['customer_id']);
                     $items['customer_id'] = $customer->getFirstname();
                 } else {
-                    $items['customer_id'] = 'Guest';
+                    $items['customer_id'] = $this->questionUserType->getUserTypeText($items['question_user_type_id']);
                 }
             }
         }
